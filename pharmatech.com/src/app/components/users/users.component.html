@@ -1,0 +1,86 @@
+<table class="table table-hover my-0">
+    <thead>
+        <tr>
+            <th> user_name</th>
+            <th class="d-none d-xl-table-cell">email</th>
+            <th class="d-none d-xl-table-cell">password</th>
+          
+            <th class="d-none d-md-table-cell">city</th>
+            <th class="d-none d-md-table-cell">street</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td class="d-none d-xl-table-cell">{{user.email}}</td>
+            <td class="d-none d-xl-table-cell">{{user.password}}</td>
+            
+            <td class="d-none d-xl-table-cell">{{user.city}}</td>
+            <td class="d-none d-md-table-cell">{{user.street}}</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" ><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning"><i class="fa-solid fa-pen"></i></button></td>
+        </tr>
+        <!-- hnkml kol elli ta7t zy elli fo2 w 3wzin ns2l ezay el btn n5liha dynamic -->
+        <tr>
+            <td>novartis</td>
+            <td class="d-none d-xl-table-cell">66677</td>
+            <td class="d-none d-xl-table-cell">cairo</td>
+            <!-- <td><span class="badge bg-success"></span></td> -->
+            
+            <td class="d-none d-md-table-cell">nouvartis@novartis.com</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" ><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning"><i class="fa-solid fa-pen"></i></button></td>
+        </tr>
+        <tr>
+            <td>novartis</td>
+            <td class="d-none d-xl-table-cell">66677</td>
+            <td class="d-none d-xl-table-cell">cairo</td>
+            <!-- <td><span class="badge bg-success"></span></td> -->
+            
+            <td class="d-none d-md-table-cell">nouvartis@novartis.com</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" ><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning"><i class="fa-solid fa-pen"></i></button></td>
+        </tr>
+        <tr>
+            <td>pfizer</td>
+            <td class="d-none d-xl-table-cell">12332</td>
+            <td class="d-none d-xl-table-cell">giza</td>
+            <!-- <td><span class="badge bg-danger">Cancelled</span></td> -->
+            <td class="d-none d-md-table-cell">pfizer@pfizer.com</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" >Delete</button> <button class="btn-warning">Edit</button></td>
+            
+        </tr>
+        <tr>
+            
+            <td>pfizer</td>
+            <td class="d-none d-xl-table-cell">12332</td>
+            <td class="d-none d-xl-table-cell">giza</td>
+            <!-- <td><span class="badge bg-danger">Cancelled</span></td> -->
+            <td class="d-none d-md-table-cell">pfizer@pfizer.com</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" >Delete</button> <button class="btn-warning">Edit</button></td>
+        </tr>
+        <tr>
+            
+            <td>pfizer</td>
+            <td class="d-none d-xl-table-cell">12332</td>
+            <td class="d-none d-xl-table-cell">giza</td>
+            <!-- <td><span class="badge bg-danger">Cancelled</span></td> -->
+            <td class="d-none d-md-table-cell">pfizer@pfizer.com</td>
+            <td class="d-none d-md-table-cell"><button class="btn-danger" >Delete</button> <button class="btn-warning">Edit</button></td>
+        </tr>
+        <tr>
+            <td>pfizer</td>
+            <td class="d-none d-xl-table-cell">12332</td>
+            <td class="d-none d-xl-table-cell">giza</td>
+            
+            <td class="d-none d-md-table-cell"><button >Delete</button> <button >Edit</button></td>
+            <td class="d-none d-md-table-cell">pfizer@pfizer.com</td>
+        </tr>
+        <tr>
+            <td>pfizer</td>
+            <td class="d-none d-xl-table-cell">12332</td>
+            <td class="d-none d-xl-table-cell">giza</td>
+            
+            <td class="d-none d-md-table-cell"><button  >Delete</button> <button >Edit</button></td>
+            <td class="d-none d-md-table-cell">pfizer@pfizer.com</td>
+        </tr>
+    </tbody>
+</table>
