@@ -19,5 +19,12 @@ getUsersData(){
     this.users=res;
   })
 
+}// hnshil el :any awel mal el api yet7at
+
+deleteData(id:any){
+  this.dataService.deleteData(id).subscribe(res=>{
+    this.getUsersData();
+  })
+
 }
 }

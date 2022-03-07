@@ -10,4 +10,12 @@ export class DataService {
   getData(){
     return this.httpClient.get('http://.....'); 
   }
+// hnshil el :any awel mal el api yet7at
+  deleteData(id:any){
+    return this.httpClient.delete('http://....../'+id);
+  }
+  getUserById(id:any){
+    return this.httpClient.get('http://....../'+id);
+  }
 }
+// hnshil el id:any mn getUserById

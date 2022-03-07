@@ -1,14 +1,15 @@
-<div class="row">
-  <div class=" col-md-3 col-xl-2   bg-dark">
 <app-navbar></app-navbar>
-  </div>
 <div class="container">
+ <div class="row "> 
+    <div class="col-auto col-md-3 col-xl-2   bg-dark" >
+       
+  <app-sidebar></app-sidebar>
+</div>
 
-    <div class=" col-md-7 col-xl-8 d-flex">
-        <div class="card flex-fill">
-  <router-outlet></router-outlet>
-</div>
+  <div class="col-sm-10 col-xl-5 col-md-8 col-lg-7  " style="margin: 10rem;"> 
+    <router-outlet></router-outlet>
+    
+    </div>
 </div>
 
-</div>
 </div>
