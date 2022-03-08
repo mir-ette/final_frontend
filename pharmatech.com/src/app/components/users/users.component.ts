@@ -11,20 +11,20 @@ users:any;
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
-   this.getUsersData()
+  //  this.getUsersData()
   }
 
-getUsersData(){
-  this.dataService.getData().subscribe(res=>{
-    this.users=res;
-  })
+// getUsersData(){
+//   this.dataService.getData().subscribe(res=>{
+//     this.users=res;
+//   })
 
-}// hnshil el :any awel mal el api yet7at
+// }// hnshil el :any awel mal el api yet7at
 
-deleteData(id:any){
-  this.dataService.deleteData(id).subscribe(res=>{
-    this.getUsersData();
-  })
+// deleteData(id:any){
+//   this.dataService.deleteData(id).subscribe(res=>{
+//     this.getUsersData();
+//   })
 
-}
-}
+// }
+ }

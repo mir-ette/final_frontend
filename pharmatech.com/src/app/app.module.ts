@@ -7,10 +7,22 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import{HttpClient, HttpClientModule} from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
-
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { AuthGuard } from './auth.guard';
 
 const appRoutes:Routes=[
-  {path:'',component:UsersComponent},
+  {path:'',component:HomeComponent,
+canActivate:[AuthGuard]},
+
+  {path:'register',component:RegisterComponent},
+  {path:'login',component:LoginComponent},
+  
+  //{path:'',component:UsersComponent},
   {path:'edit/:id',component:UserEditComponent}
 
 ]
@@ -20,12 +32,24 @@ const appRoutes:Routes=[
     UsersComponent,
     NavbarComponent,
     SidebarComponent,
-    UserEditComponent
+    UserEditComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+     RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(routes),
+    
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
