@@ -108,7 +108,7 @@
     </div>
 </div> -->
 
-          
+<!--           
 <form action=" " method="post"  (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
   
                     <div class="d-flex flex-row align-items-center mb-4">
@@ -225,8 +225,147 @@
                       <button type="submit"  class="btn btn-primary btn-lg">Register</button>
                     </div>
   
-                  </form>
+                  </form> -->
   
     
-    
+                  <div class="container h-100" style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin-top: 3rem; width:60rem;">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-lg-12 col-xl-11">
+                            <div class="card text-black" style="border-radius: 25px;  background-color: transparent;">
+                                <div class="card-body p-md-5">
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                
+                                       
+                
+                                          <form action=" " method="post"  (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
+  
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                              <i class="fas fa-user fa-lg me-3 fa-fw"style="color:aqua;"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <input type="text" class="form-control" formControlName="name" name="name" [ngClass]="{'is-invalid': submitted &&f['name'].errors}"  required/>
+                                                <label class="form-label" for="form3Example1c">Your Name</label>
+                                                <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                                  <div  *ngIf="f['name'].errors['required']">
+                                                   name is required
+                                                  </div>
+                        
+                                              </div>
+                                            </div>
+                                              
+                                              
+                                            </div>
+                                            
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                              <i class="fas fa-envelope fa-lg me-3 fa-fw"style="color:aqua;"></i>
+                                              <div class="form-outline flex-fill mb-0">
+                                                <input type="email" name="email"formControlName="email" class="form-control"  [ngClass]="{'is-invalid': submitted && f['email'].errors}" required />
+                                                <label class="form-label" for="form3Example3c">Your Email</label>
+                        
+                        
+                                                
+                                             <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                              <div  *ngIf="f['email'].errors['required']">
+                                               email is required
+                                              </div>
+                                                
+                                        
+                                              <div  *ngIf="f['email'].errors['email']">
+                                               email must be valid
+                                              </div>
+                                        
+                                              </div>
+                                            </div>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fas fa-lock fa-lg me-3 fa-fw" style="color:aqua;"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                  <input type="password" name="password" formControlName="password"  class="form-control" [ngClass]="{'is-invalid': submitted &&f['password'].errors}"  required />
+                                                  <label class="form-label" for="form3Example4c">Password</label>
+                        
+                        
+                                                  <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                                                    <div  *ngIf="f['password'].errors['required']">
+                                                     password is required
+                                                    </div>
+                                                      
+                                              
+                                                    <div  *ngIf="f['password'].errors['minlength']">
+                                                     email must be more than 6 letter
+                                                    </div>
+                                              
+                                                    </div>
+                                                  
+                                                </div>
+                                              </div>
+                          
+                                           
+                                              <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fa-solid fa-city fa-lg me-3 fa-fw"style="color:aqua;"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                  <input type="text" class="form-control"   formControlName="city" name="city" [ngClass]="{'is-invalid': submitted && f['city'].errors}" required/>
+                                                  <label class="form-label" for="form3Example1c">city</label>
+                        
+                                                 
+                                                  <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+                                                    <div  *ngIf="f['city'].errors['required']">
+                                                     city is required
+                                                    </div>
+                            
+                                                </div>
+                                                </div>
+                                              </div>
+                                              <div class="d-flex flex-row align-items-center mb-4">
+                                                <i class="fa-solid fa-road fa-lg me-3 fa-fw"style="color:aqua;"></i>
+                                                <div class="form-outline flex-fill mb-0">
+                                                  <input type="text" class="form-control" formControlName="street"  name="street" [ngClass]="{'is-invalid': submitted && f['street'].errors}" required/>
+                                                  <label class="form-label" for="form3Example1c">street</label>
+                        
+                                                  <div *ngIf="submitted && f['street'].errors" class="invalid-feedback">
+                                                    <div  *ngIf="f['street'].errors['required']">
+                                                     street is required
+                                                    </div>
+                            
+                                                </div>
+                                                </div>
+                            
+                                                </div>
+                                              
+                        
+                                                 <div class="d-flex flex-row align-items-center mb-4">
+                                                  <i class="fa-solid fa-city fa-lg me-3 fa-fw"></i>
+                                                  <div class="form-outline flex-fill mb-0">
+                                                    <input type="text" class="form-control"   formControlName="role" name="role" [ngClass]="{'is-invalid': submitted && f['role'].errors}" required/>
+                                                    <label class="form-label" for="form3Example1c">role</label>
+                          
+                                                   
+                                                    <div *ngIf="submitted && f['role'].errors" class="invalid-feedback">
+                                                      <div  *ngIf="f['role'].errors['required']">
+                                                       role is required
+                                                      </div>
+                              
+                                                  </div>
+                                                  </div>
+                                                </div>
+                                               
+                                           
+                          
+                                           
+                                          
+                          
+                                                <div class="mb-3 form-check">
+                                                  <a [routerLink]="['/login']">already have an account</a>
+                                                </div>
+                                                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                                    <button type="submit" class="btn btn-warning btn-lg">Register</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
   

@@ -14,6 +14,15 @@ loginUser(data:any){
   return this.http.post(environment.apiUrl+'/api/login/',data);
 }
 
+getData(){
+  return this.http.get(environment.apiUrl);
+}
+deleteData(id:any){
+  return this.http.get(environment.apiUrl+id);
+}
+getUserById(id:any){
+  return this.http.get(environment.apiUrl+id);
+}
   // constructor(private httpClient:HttpClient) { }
 // hn70t el api elli mn el laravel makan...
   // getData(){
