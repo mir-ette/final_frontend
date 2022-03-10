@@ -15,14 +15,22 @@ loginUser(data:any){
 }
 
 getData(){
-  return this.http.get(environment.apiUrl);
+  return this.http.get(environment.apiUrl+'/api/drugs');
 }
 deleteData(id:any){
-  return this.http.get(environment.apiUrl+id);
+  return this.http.delete(environment.apiUrl+'/api/deleteDrug/'+id);
 }
-getUserById(id:any){
-  return this.http.get(environment.apiUrl+id);
+getDrugById(id:any){
+  return this.http.get(environment.apiUrl+'/api/drug'+id);
 }
+insertData(data:any){
+  return this.http.post(environment.apiUrl+'/api/addDrug/',data);
+}
+
+updateData(id:any,data:any){
+  return this.http.put(environment.apiUrl+'/api/updateDrug/'+id,data);
+}
+
   // constructor(private httpClient:HttpClient) { }
 // hn70t el api elli mn el laravel makan...
   // getData(){

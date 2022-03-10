@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
+import { DrugsComponent } from './drugs/drugs.component';
+import { DrugEditComponent } from './drug-edit/drug-edit.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
@@ -21,9 +23,17 @@ canActivate:[AuthGuard]},
 
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  
+  {path:'drugs',component:DrugsComponent
+  },
+  {path:'drugs/edit/:id',component:DrugEditComponent}
+
+
   //{path:'',component:UsersComponent},
-  {path:'edit/:id',component:UserEditComponent}
+  // {path:'edit/:id',component:UserEditComponent},
+  // {path:'drugs',component:DrugsComponent,childern:[
+    // {path:'/edit/:id',component:DrugEditComponent}
+  // ]}
+  // {path:'drugs/edit/:id',component:DrugEditComponent}
 
 ]
 @NgModule({
@@ -35,7 +45,9 @@ canActivate:[AuthGuard]},
     UserEditComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    DrugsComponent,
+    DrugEditComponent
   ],
   imports: [
     BrowserModule,
