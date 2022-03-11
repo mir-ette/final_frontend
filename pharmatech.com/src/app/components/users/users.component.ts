@@ -16,18 +16,19 @@ user=new User();
   }
 
  getUsersData(){
-  this.dataService.getData().subscribe(res=>{
+  this.dataService.getUsersData().subscribe(res=>{
     this.users=res;
    })
 
  }// hnshil el :any awel mal el api yet7at
 
  deleteUserData(id:any){
-  this.dataService.deleteData(id).subscribe(res=>{
+  this.dataService.deleteUserData(id).subscribe(res=>{
    this.getUsersData();
   })
 
  }
+
  }
 
 

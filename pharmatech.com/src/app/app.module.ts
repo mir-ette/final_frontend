@@ -31,7 +31,8 @@ canActivate:[AuthGuard]},
 
   {path:'orders',component:OrdersComponent
 },
-{path:'orders/edit/:id',component:OrderEditComponent}
+{path:'orders/edit/:id',component:OrderEditComponent},
+{path:'edit/:id',component:UserEditComponent},
   //{path:'',component:UsersComponent},
   // {path:'edit/:id',component:UserEditComponent},
   // {path:'drugs',component:DrugsComponent,childern:[

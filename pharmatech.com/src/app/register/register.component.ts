@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import { ToastrService } from 'ngx-toastr';
+import { User } from '../user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +12,8 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
 submitted = false;
 data:any;
-user:any;
+users:any;
+user= new User();
   constructor( private formBuilder:FormBuilder,private dataService:DataService,private toastr:ToastrService) { }
   createForm(){
     this.form= this.formBuilder.group({

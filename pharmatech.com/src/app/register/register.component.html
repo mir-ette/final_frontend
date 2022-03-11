@@ -238,12 +238,12 @@
                 
                                        <!-- <form (ngSubmit)="insertUserData()"> -->
                 
-                                          <form action=" " method="post"  (ngSubmit)="insertUserData()" (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
+                                          <form action=" " method="post"   (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
   
                                             <div class="d-flex flex-row align-items-center mb-4">
                                               <i class="fas fa-user fa-lg me-3 fa-fw"style="color:aqua;"></i>
                                               <div class="form-outline flex-fill mb-0">
-                                                <input type="text" class="form-control" formControlName="name" name="name" [ngClass]="{'is-invalid': submitted &&f['name'].errors}"  required/>
+                                                <input type="text" class="form-control" formControlName="name" name="name"   [ngClass]="{'is-invalid': submitted &&f['name'].errors}"  required/>
                                                 <label class="form-label" for="form3Example1c">Your Name</label>
                                                 <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
                                                   <div  *ngIf="f['name'].errors['required']">
@@ -335,7 +335,7 @@
                                                  <div class="d-flex flex-row align-items-center mb-4">
                                                   <i class="fa-solid fa-city fa-lg me-3 fa-fw"></i>
                                                   <div class="form-outline flex-fill mb-0">
-                                                    <input type="text" class="form-control"   formControlName="role" name="role" [ngClass]="{'is-invalid': submitted && f['role'].errors}" required/>
+                                                    <input type="text" class="form-control"   formControlName="role" name="role" [ngClass]="{'is-invalid': submitted && f['role'].errors}"   required/>
                                                     <label class="form-label" for="form3Example1c">role</label>
                           
                                                    
