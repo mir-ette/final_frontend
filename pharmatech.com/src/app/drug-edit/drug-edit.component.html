@@ -1,5 +1,7 @@
-<form (ngSubmit)="updateDrug()">
-    <div class="form-group">
+
+<div class="container"style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin:2rem; padding-left:1 rem"><form (ngSubmit)="updateDrug()">
+   
+  <div class="form-group" style=" background-color: transparent;">
       <label for=" trade_name_ar"> trade_name_ar</label>
       <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
     </div>
@@ -29,7 +31,8 @@
       <label for=" expiry_date"> expiry_date</label>
       <input type="date" class="form-control" name=" expiry_date" [(ngModel)]="drug.expiry_date">
     </div>
-    <button  type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button>
-    <!-- <button  type="submit" routerLink="/drugs/edit{{drug.id:a}}" class="btn btn-dark btn-sm mt-4"><i class="fa-solid fa-hand-back-point-right"></i></button>
-    -->
+     <button  type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button> <br>
+     <button  type="submit" routerLink="/drugs" class="btn btn-dark btn-sm mt-4"><i class="fa-solid fa-arrow-left"></i></button> 
+  
     </form>
+  </div>

@@ -21,7 +21,7 @@ deleteData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteDrug/'+id);
 }
 getDrugById(id:any){
-  return this.http.get(environment.apiUrl+'/api/drug'+id);
+  return this.http.get(environment.apiUrl+'/api/drugs'+id);
 }
 insertData(data:any){
   return this.http.post(environment.apiUrl+'/api/addDrug/',data);
@@ -30,6 +30,43 @@ insertData(data:any){
 updateData(id:any,data:any){
   return this.http.put(environment.apiUrl+'/api/updateDrug/'+id,data);
 }
+////////////////////////////////////////////////////////
+getUsersData(){
+  return this.http.get(environment.apiUrl+'/api/users');
+}
+deleteUserData(id:any){
+  return this.http.delete(environment.apiUrl+'/api/deleteUser/'+id);
+}
+getUserById(id:any){
+  return this.http.get(environment.apiUrl+'/api/users'+id);
+}
+insertUserData(data:any){
+  return this.http.post(environment.apiUrl+'/api/addUser/',data);
+}
+
+updateUserData(id:any,data:any){
+  return this.http.put(environment.apiUrl+'/api/updateUser/'+id,data);
+}
+////////////////////////////////////////////////////////////////
+
+getOrdersData(){
+  return this.http.get(environment.apiUrl+'/api/orders');
+}
+deleteOrderData(id:any){
+  return this.http.delete(environment.apiUrl+'/api/deleteOrder/'+id);
+}
+getOrderById(id:any){
+  return this.http.get(environment.apiUrl+'/api/orders'+id);
+}
+insertOrderData(data:any){
+  return this.http.post(environment.apiUrl+'/api/addOrder/',data);
+}
+
+updateOrderData(id:any,data:any){
+  return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
+}
+
+
 
   // constructor(private httpClient:HttpClient) { }
 // hn70t el api elli mn el laravel makan...

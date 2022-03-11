@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
 submitted = false;
 data:any;
-
+user:any;
   constructor( private formBuilder:FormBuilder,private dataService:DataService,private toastr:ToastrService) { }
   createForm(){
     this.form= this.formBuilder.group({
@@ -63,5 +63,10 @@ this.form.get('role')?.reset();
       });
       
     }
-  
-  }
+    insertUserData(){
+      this.dataService.insertUserData(this.user).subscribe(res=>{
+        // this.getDrugsData
+        console.log(res);
+        
+      })
+    }}

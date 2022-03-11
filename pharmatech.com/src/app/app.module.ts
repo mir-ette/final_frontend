@@ -16,6 +16,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './auth.guard';
 import { DrugsComponent } from './drugs/drugs.component';
 import { DrugEditComponent } from './drug-edit/drug-edit.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderEditComponent } from './order-edit/order-edit.component';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
@@ -25,9 +27,11 @@ canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'drugs',component:DrugsComponent
   },
-  {path:'drugs/edit/:id',component:DrugEditComponent}
+  {path:'drugs/edit/:id',component:DrugEditComponent},
 
-
+  {path:'orders',component:OrdersComponent
+},
+{path:'orders/edit/:id',component:OrderEditComponent}
   //{path:'',component:UsersComponent},
   // {path:'edit/:id',component:UserEditComponent},
   // {path:'drugs',component:DrugsComponent,childern:[
@@ -47,7 +51,9 @@ canActivate:[AuthGuard]},
     RegisterComponent,
     HomeComponent,
     DrugsComponent,
-    DrugEditComponent
+    DrugEditComponent,
+    OrdersComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule,
