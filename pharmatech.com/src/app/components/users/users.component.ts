@@ -9,6 +9,7 @@ import { User } from 'src/app/user';
 export class UsersComponent implements OnInit {
 users:any;
 user=new User();
+p: number = 1;
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {

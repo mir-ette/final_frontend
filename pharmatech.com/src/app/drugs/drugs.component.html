@@ -1,39 +1,46 @@
 <app-navbar></app-navbar>
 
  <div class="row "> 
-    <div class="col-auto col-md-3 col-xl-2   bg-dark">
+    <div class="col-auto col-md-3 col-xl-2   ">
         
        
   <app-sidebar></app-sidebar>
 </div>
 
-  <div class="col-sm-10 col-xl-5 col-md-8 col-lg-7  " style="margin: 10rem;"> 
+  <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
+    <h1 style="padding:30px">DRUGS</h1>
+    <div style="padding-left:90%;">
+      <button type="button" class=" btn btn-warning" routerLink="/drugs/add" >add drug</button></div>
     <table class="table table-hover my-0" >
         <thead>
             <tr>
+              <th class="d-none d-md-table-cell">image</th>
+
+              <th class="d-none d-xl-table-cell">trade_name_en</th>
                 <th class="d-none d-xl-table-cell">trade_name_ar </th>
-                <th class="d-none d-xl-table-cell">trade_name_en</th>
+               
                 <th class="d-none d-xl-table-cell">price</th>
                 <th class="d-none d-md-table-cell">'description</th>
-                <th class="d-none d-md-table-cell">image</th>
                 <th class="d-none d-xl-table-cell">production_date</th>
                 <th class="d-none d-xl-table-cell">expiry_date</th>
                 <th class="d-none d-xl-table-cell">action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let drug of drugs">
+            <tr *ngFor="let drug of drugs | paginate: { itemsPerPage: 5, currentPage: p }">
+              <td class="d-none d-md-table-cell">{{drug.image}}</td>
+              <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
                 <td>{{drug.trade_name_ar}}</td>
-                <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
+               
                 <td class="d-none d-xl-table-cell">{{drug.price}}</td>
                 
                 <td class="d-none d-xl-table-cell">{{drug.description}}</td>
-                <td class="d-none d-md-table-cell">{{drug.image}}</td>
+               
                 <td class="d-none d-md-table-cell">{{drug.production_date}}</td>
                 <td class="d-none d-md-table-cell">{{drug.expiry_date}}</td>
                  <td class="d-none d-md-table-cell"><button class="btn-danger" (click)="deleteData(drug.id)"><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning" routerLink="/drugs/edit/{{drug.id}}"><i class="fa-solid fa-pen"></i></button></td> 
             </tr>
-            <!-- hnkml kol elli ta7t zy elli fo2 w 3wzin ns2l ezay el btn n5liha dynamic -->
+            
             
            
             
@@ -43,7 +50,7 @@
         </tbody>
     </table>
 
-
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 <!-- 
     <form action=" " method="post"  (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
   
@@ -210,14 +217,19 @@ ADD DRUG
       <div class="modal-body">
         <form (ngSubmit)="insertData()">
           <div class="form-group">
-            <label for=" trade_name_ar"> trade_name_ar</label>
-            <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
+            <label for=" image"> image</label>
+            <input type="text" class="form-control" name=" image" [(ngModel)]="drug.image">
           </div>
-          
           <div class="form-group">
             <label for=" trade_name_en"> trade_name_en</label>
             <input type="text" class="form-control" name=" trade_name_en" [(ngModel)]="drug.trade_name_en">
           </div>
+          <div class="form-group">
+            <label for=" trade_name_ar"> trade_name_ar</label>
+            <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
+          </div>
+          
+       
           <div class="form-group">
             <label for="price"> price</label>
             <input type="number" class="form-control" name=" price" [(ngModel)]="drug.price">
@@ -226,10 +238,7 @@ ADD DRUG
             <label for="  description"> description</label>
             <input type="text" class="form-control" name="  description" [(ngModel)]="drug. description">
           </div>
-          <div class="form-group">
-            <label for=" image"> image</label>
-            <input type="text" class="form-control" name=" image" [(ngModel)]="drug.image">
-          </div>
+       
           <div class="form-group">
             <label for=" production_date"> production_date</label>
             <input type="date" class="form-control" name=" production_date" [(ngModel)]="drug.production_date">
@@ -239,7 +248,7 @@ ADD DRUG
             <label for=" expiry_date"> expiry_date</label>
             <input type="date" class="form-control" name=" expiry_date" [(ngModel)]="drug.expiry_date">
           </div>
-          <button  type="submit" class="btn btn-dark btn-sm mt-4">ADD</button>
+          <button  type="submit"  (click)="gotoDrugs()"  class="btn btn-dark btn-sm mt-4">ADD</button>
           </form>
       </div>
       <div class="modal-footer">
@@ -249,7 +258,6 @@ ADD DRUG
     </div>
   </div>
 </div>
-
 
 
 

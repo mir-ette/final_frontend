@@ -7,5 +7,6 @@ export class Drug {
     image:any;
     production_date:any;
     expiry_date:any;
+    // id:any;
 
 }

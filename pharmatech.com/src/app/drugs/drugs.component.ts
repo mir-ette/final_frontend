@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import { ToastrService } from 'ngx-toastr';
 import { Drug } from '../drug';
+import { Router } from '@angular/router';
 import {AbstractControl, ValidatorFn} from '@angular/forms';
 
 @Component({
@@ -23,7 +24,8 @@ import {AbstractControl, ValidatorFn} from '@angular/forms';
   drugs:any;
   drug= new Drug();
   
-  constructor( private formBuilder:FormBuilder,private dataService:DataService,private toastr:ToastrService) { } //ba3din 3ashan 3awza dema8
+  p: number = 1;
+  constructor( private formBuilder:FormBuilder,private dataService:DataService,private toastr:ToastrService,private router:Router) { } //ba3din 3ashan 3awza dema8
   // createForm(){
   //   this.form= this.formBuilder.group({
   //     trade_name_ar:['',Validators.required],
@@ -61,10 +63,13 @@ insertData(){
   this.dataService.insertData(this.drug).subscribe(res=>{
     // this.getDrugsData
     console.log(res);
+    this.router.navigate(['/drugs']);
     
   })
 }
-
+gotoDrugs(){
+  this.router.navigate(['/drugs']);
+}
 // get f(){
 //   return this.form.controls;
 // }

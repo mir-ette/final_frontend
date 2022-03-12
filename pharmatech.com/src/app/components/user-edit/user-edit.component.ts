@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/service/data.service';
+import { Router } from '@angular/router';
 import { User } from 'src/app/user';
 @Component({
   selector: 'app-user-edit',
@@ -13,7 +14,7 @@ data:any;
 users:any;
 user =new User();
   // data: Object | undefined;
-  constructor(private route:ActivatedRoute,private dataService:DataService) { }
+  constructor(private route:ActivatedRoute,private dataService:DataService,private router:Router) { }
 
   ngOnInit(): void {
     // console.log(this.route.snapshot.params.id);
@@ -24,7 +25,7 @@ user =new User();
   this.dataService.getUserById(this.id).subscribe(res=>{
 //     // console.log(res); 
    this.data=res;
-    this.user=this.data
+    this.user=this.data;
     
   }) 
 
@@ -40,9 +41,11 @@ user =new User();
 
 
 
-
-
-
-
+// gotoUsers(){
+//   this.router.navigate(['/']);
 }
+
+
+
+
 

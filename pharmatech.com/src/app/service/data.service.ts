@@ -66,6 +66,28 @@ updateOrderData(id:any,data:any){
   return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
 }
 
+/////////////////////////////////////////////////////////////////////////
+
+getCategoriesData(){
+  return this.http.get(environment.apiUrl+'/api/categories');
+}
+deleteCategoryData(id:any){
+  return this.http.delete(environment.apiUrl+'/api/deleteCategory/'+id);
+}
+getCategoryById(id:any){
+  return this.http.get(environment.apiUrl+'/api/categories'+id);
+}
+insertCategoryData(data:any){
+  return this.http.post(environment.apiUrl+'/api/addCategory/',data);
+}
+
+updateCategoryData(id:any,data:any){
+  return this.http.put(environment.apiUrl+'/api/updateCategory/'+id,data);
+}
+
+
+
+
 
 
   // constructor(private httpClient:HttpClient) { }

@@ -18,21 +18,37 @@ import { DrugsComponent } from './drugs/drugs.component';
 import { DrugEditComponent } from './drug-edit/drug-edit.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
-
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CategoryAddComponent } from './category-add/category-add.component';
+import { DrugAddComponent } from './drug-add/drug-add.component';
+import { OrderAddComponent } from './order-add/order-add.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
 canActivate:[AuthGuard]},
 
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
+  {path:'edit/:id',component:UserEditComponent},
+  //////////////////////////////////
   {path:'drugs',component:DrugsComponent
   },
+  {path:'drugs/add',component:DrugAddComponent
+},
   {path:'drugs/edit/:id',component:DrugEditComponent},
-
+//////////////////////////////////////////////
   {path:'orders',component:OrdersComponent
 },
+{path:'orders/add',component:OrderAddComponent},
 {path:'orders/edit/:id',component:OrderEditComponent},
-{path:'edit/:id',component:UserEditComponent},
+////////////////////////////////////////////
+
+{path:'categories',component:CategoriesComponent
+},
+{path:'categories/edit/:id',component:CategoryEditComponent},
+{path:'categories/add',component:CategoryAddComponent
+},
   //{path:'',component:UsersComponent},
   // {path:'edit/:id',component:UserEditComponent},
   // {path:'drugs',component:DrugsComponent,childern:[
@@ -54,7 +70,12 @@ canActivate:[AuthGuard]},
     DrugsComponent,
     DrugEditComponent,
     OrdersComponent,
-    OrderEditComponent
+    OrderEditComponent,
+    CategoriesComponent,
+    CategoryEditComponent,
+    CategoryAddComponent,
+    DrugAddComponent,
+    OrderAddComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +87,7 @@ canActivate:[AuthGuard]},
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-
+    NgxPaginationModule
 
 
   ],
