@@ -24,6 +24,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { DrugAddComponent } from './drug-add/drug-add.component';
 import { OrderAddComponent } from './order-add/order-add.component';
+import { HomeNavbarComponent } from './components/home-navbar/home-navbar.component';
+import { HomeFooterComponent } from './components/home-footer/home-footer.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { DrugSliderComponent } from './components/drug-slider/drug-slider.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
 canActivate:[AuthGuard]},
@@ -49,6 +53,9 @@ canActivate:[AuthGuard]},
 {path:'categories/edit/:id',component:CategoryEditComponent},
 {path:'categories/add',component:CategoryAddComponent
 },
+/////////////////////////////////////////////////////////
+{path:'home',component:HomePageComponent},
+
   //{path:'',component:UsersComponent},
   // {path:'edit/:id',component:UserEditComponent},
   // {path:'drugs',component:DrugsComponent,childern:[
@@ -75,7 +82,11 @@ canActivate:[AuthGuard]},
     CategoryEditComponent,
     CategoryAddComponent,
     DrugAddComponent,
-    OrderAddComponent
+    OrderAddComponent,
+    HomeNavbarComponent,
+    HomeFooterComponent,
+    HomePageComponent,
+    DrugSliderComponent
   ],
   imports: [
     BrowserModule,
