@@ -25,6 +25,7 @@ import { CategoryAddComponent } from './category-add/category-add.component';
 import { DrugAddComponent } from './drug-add/drug-add.component';
 import { OrderAddComponent } from './order-add/order-add.component';
 import { AuthGuardGuard } from './_guard/auth-guard.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
 canActivate:[AuthGuardGuard]},
@@ -76,7 +77,8 @@ canActivate:[AuthGuardGuard]},
     CategoryEditComponent,
     CategoryAddComponent,
     DrugAddComponent,
-    OrderAddComponent
+    OrderAddComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
