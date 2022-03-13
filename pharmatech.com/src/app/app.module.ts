@@ -24,9 +24,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { DrugAddComponent } from './drug-add/drug-add.component';
 import { OrderAddComponent } from './order-add/order-add.component';
+import { AuthGuardGuard } from './_guard/auth-guard.guard';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent,
-canActivate:[AuthGuard]},
+canActivate:[AuthGuardGuard]},
 
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},

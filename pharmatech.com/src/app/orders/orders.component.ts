@@ -11,10 +11,10 @@ export class OrdersComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
   data:any;
-  
+  p: number = 1;
   orders:any;
   order= new Order();
-  p: number = 1;
+
   constructor(private formBuilder:FormBuilder,private dataService:DataService) { }
 
   ngOnInit(): void {

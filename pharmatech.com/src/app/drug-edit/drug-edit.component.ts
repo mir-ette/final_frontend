@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Drug } from '../drug';
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-drug-edit',
   templateUrl: './drug-edit.component.html',
@@ -12,7 +13,7 @@ export class DrugEditComponent implements OnInit {
   id:any;
   drugs:any;
   drug= new Drug();
-  constructor(private dataService:DataService,private route:ActivatedRoute) { }
+  constructor(private dataService:DataService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
@@ -31,6 +32,7 @@ updateDrug(){
   this.dataService.updateData(this.id,this.drug).subscribe(res=>{
     
   })
+  this.router.navigate(['/drugs'])
 }
 
 }

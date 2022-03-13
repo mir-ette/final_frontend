@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let order of orders  | paginate: { itemsPerPage: 5, currentPage: p }">
+            <tr *ngFor="let order of orders   | paginate: { itemsPerPage: 5, currentPage: p }">
               <td class="d-none d-xl-table-cell">{{order.shipping_address}}</td>
                 <td>{{order.total_cost}}</td>
                 <td class="d-none d-xl-table-cell">{{order.status}}</td>   <!-- ask hndsa kn esmo eh el button elli 3awzo -->
@@ -39,7 +39,9 @@
        
         </tbody>
     </table>
+   
     <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+
 
   
             <!-- Button trigger modal -->

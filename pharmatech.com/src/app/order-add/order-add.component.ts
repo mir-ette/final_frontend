@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import { Order } from '../order';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-order-add',
   templateUrl: './order-add.component.html',
@@ -15,7 +16,7 @@ export class OrderAddComponent implements OnInit {
   orders:any;
   order= new Order();
   
-  constructor(private formBuilder:FormBuilder,private dataService:DataService) { }
+  constructor(private formBuilder:FormBuilder,private dataService:DataService,private router:Router) { }
 
   ngOnInit(): void {
     this.getOrdersData()
@@ -37,5 +38,6 @@ export class OrderAddComponent implements OnInit {
     console.log(res);
     
   })
+  this.router.navigate(['orders']);
    }
 }

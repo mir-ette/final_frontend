@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 import { Category } from '../category'; 
 @Component({
@@ -13,7 +13,7 @@ export class CategoryEditComponent implements OnInit {
   categories:any;
   category= new Category();
 
-  constructor(private dataService:DataService,private route:ActivatedRoute) { }
+  constructor(private dataService:DataService,private route:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
@@ -32,6 +32,7 @@ export class CategoryEditComponent implements OnInit {
     this.dataService.updateCategoryData(this.id,this.category).subscribe(res=>{
       
     })
+    this.router.navigate(['/categories'])
   }
   
   }

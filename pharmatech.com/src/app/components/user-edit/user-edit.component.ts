@@ -34,9 +34,10 @@ user =new User();
 
  updateUserData(){
   this.dataService.updateUserData(this.id,this.user).subscribe(res=>{
-   // this.data=res;
-    //this.user=this.data
+     this.data=res;
+     this.user=this.data
   })
+  this.router.navigate(['/'])
 }
 
 

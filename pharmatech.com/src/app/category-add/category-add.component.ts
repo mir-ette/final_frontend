@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
 import { Category } from '../category';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-category-add',
   templateUrl: './category-add.component.html',
@@ -14,7 +15,7 @@ export class CategoryAddComponent implements OnInit {
 
   categories:any;
   category= new  Category();
-  constructor(private formBuilder:FormBuilder,private dataService:DataService) { }
+  constructor(private formBuilder:FormBuilder,private dataService:DataService,private router:Router) { }
 
 
   ngOnInit(): void {
@@ -33,5 +34,6 @@ export class CategoryAddComponent implements OnInit {
       console.log(res);
       
     })
+    this.router.navigate(['/categories']);
      }
 }
