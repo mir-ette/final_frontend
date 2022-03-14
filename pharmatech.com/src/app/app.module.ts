@@ -27,9 +27,13 @@ import { OrderAddComponent } from './order-add/order-add.component';
 import { AuthGuardGuard } from './_guard/auth-guard.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChildrenGuard } from './_guard/admin/children.guard';
+import { HomeNavbarComponent } from './components/home-navbar/home-navbar.component';
+import { HomeFooterComponent } from './components/home-footer/home-footer.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { DrugSliderComponent } from './components/drug-slider/drug-slider.component';
 const appRoutes: Routes = [
     {path:'',component:HomeComponent,canActivate:[AuthGuardGuard]  },
-
+    {path:'home',component:HomePageComponent},
     {path:'register',component:RegisterComponent,},
     {path:'login',component:LoginComponent,},
     {path:'edit/:id',component:UserEditComponent,},
@@ -103,6 +107,14 @@ const appRoutes: Routes = [
 
 
 
+
+  //{path:'',component:UsersComponent},
+  // {path:'edit/:id',component:UserEditComponent},
+  // {path:'drugs',component:DrugsComponent,childern:[
+    // {path:'/edit/:id',component:DrugEditComponent}
+  // ]}
+  // {path:'drugs/edit/:id',component:DrugEditComponent}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -122,7 +134,10 @@ const appRoutes: Routes = [
     CategoryAddComponent,
     DrugAddComponent,
     OrderAddComponent,
-    DashboardComponent
+    HomeNavbarComponent,
+    HomeFooterComponent,
+    HomePageComponent,
+    DrugSliderComponent
   ],
   imports: [
     BrowserModule,
