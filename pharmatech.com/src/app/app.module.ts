@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import{HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { LoginComponent } from './login/login.component';
@@ -20,45 +20,89 @@ import { OrdersComponent } from './orders/orders.component';
 import { OrderEditComponent } from './order-edit/order-edit.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { CategoryAddComponent } from './category-add/category-add.component';
 import { DrugAddComponent } from './drug-add/drug-add.component';
 import { OrderAddComponent } from './order-add/order-add.component';
 import { AuthGuardGuard } from './_guard/auth-guard.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
-const appRoutes:Routes=[
-  {path:'',component:HomeComponent,
-canActivate:[AuthGuardGuard]},
+import { ChildrenGuard } from './_guard/admin/children.guard';
+const appRoutes: Routes = [
+    {path:'',component:HomeComponent,canActivate:[AuthGuardGuard]  },
 
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
-  {path:'edit/:id',component:UserEditComponent},
-  //////////////////////////////////
-  {path:'drugs',component:DrugsComponent
+    {path:'register',component:RegisterComponent,},
+    {path:'login',component:LoginComponent,},
+    {path:'edit/:id',component:UserEditComponent,},
+    //////////////////////////////////
+    {path:'drugs',component:DrugsComponent
+    ,canActivate:[AuthGuardGuard]},
+    {path:'drugs/add',component:DrugAddComponent,
   },
-  {path:'drugs/add',component:DrugAddComponent
-},
-  {path:'drugs/edit/:id',component:DrugEditComponent},
-//////////////////////////////////////////////
-  {path:'orders',component:OrdersComponent
-},
-{path:'orders/add',component:OrderAddComponent},
-{path:'orders/edit/:id',component:OrderEditComponent},
-////////////////////////////////////////////
+    {path:'drugs/edit/:id',component:DrugEditComponent,},
+  //////////////////////////////////////////////
+    {path:'orders',component:OrdersComponent,
+  },
+  {path:'orders/add',component:OrderAddComponent,},
+  {path:'orders/edit/:id',component:OrderEditComponent,},
+  ////////////////////////////////////////////
 
-{path:'categories',component:CategoriesComponent
-},
-{path:'categories/edit/:id',component:CategoryEditComponent},
-{path:'categories/add',component:CategoryAddComponent
-},
-  //{path:'',component:UsersComponent},
-  // {path:'edit/:id',component:UserEditComponent},
-  // {path:'drugs',component:DrugsComponent,childern:[
-    // {path:'/edit/:id',component:DrugEditComponent}
-  // ]}
-  // {path:'drugs/edit/:id',component:DrugEditComponent}
+  {path:'categories',component:CategoriesComponent,
+  },
+  {path:'categories/edit/:id',component:CategoryEditComponent,},
+  {path:'categories/add',component:CategoryAddComponent,
+  },
+  ////////////////////////////////////////////////
+  {path:'dashboard',component:DashboardComponent
+  },
 
-]
+  ]
+
+  ///////////////////////////////////////////////
+  //,pathMatch:'full'
+  //canActivateChild:[AuthGuardGuard],
+//   {
+//     path: '', component: HomeComponent, 
+//     canActivate: [AuthGuardGuard], 
+//     canActivateChild: [ChildrenGuard],
+//     children: [
+//       { path: 'drugs', component: DrugsComponent, },
+//       { path: 'drugs/add', component: DrugAddComponent },
+//       { path: 'drugs/edit/:id', component: DrugEditComponent },
+//       { path: 'edit/:id', component: UserEditComponent },
+//       { path: 'orders', component: OrdersComponent },
+//       { path: 'orders/add', component: OrderAddComponent },
+//       { path: 'orders/edit/:id', component: OrderEditComponent },
+//       { path: 'categories', component: CategoriesComponent },
+//       { path: 'categories/edit/:id', component: CategoryEditComponent },
+//       { path: 'categories/add', component: CategoryAddComponent }
+//     ]
+//   },
+
+//   { path: 'register', component: RegisterComponent, },
+//   { path: 'login', component: LoginComponent },
+
+
+
+
+
+
+
+
+
+
+
+//   ////////////////////////////////////////////////
+//   {
+//     path: 'dashboard', component: DashboardComponent
+//   },
+
+// ]
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,9 +127,9 @@ canActivate:[AuthGuardGuard]},
   imports: [
     BrowserModule,
     HttpClientModule,
-     RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes),
     // RouterModule.forRoot(routes),
-    
+
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
