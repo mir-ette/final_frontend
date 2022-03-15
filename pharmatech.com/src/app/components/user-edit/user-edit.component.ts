@@ -37,7 +37,7 @@ user =new User();
      this.data=res;
      this.user=this.data
   })
-  this.router.navigate(['/'])
+  this.router.navigate(['/users'])
 }
 
 
