@@ -35,9 +35,7 @@ import { HomeDrugComponent } from './components/home-drug/home-drug.component';
 import { AboutDrugComponent } from './components/about-drug/about-drug.component';
 import { HomeContactComponent } from './components/home-contact/home-contact.component';
 import { HomeSkinComponent } from './components/home-skin/home-skin.component';
-import { HomeDetailsComponent } from './components/home-details/home-details.component';
 import { HomeCartComponent } from './components/home-cart/home-cart.component';
-import { HomePharmacyComponent } from './components/home-pharmacy/home-pharmacy.component';
 import { ProfileAdminComponent } from './profile-admin/profile-admin.component';
 import { EditAdminComponent } from './edit-admin/edit-admin.component';
 import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
@@ -71,11 +69,11 @@ const appRoutes: Routes = [
   ///////////////////////////////////////////////
 {path:'home/drug',component: HomeDrugComponent},
 {path:'home/contact',component: HomeContactComponent},
-{path:'about/drug',component: AboutDrugComponent},
+{path:'about',component: AboutDrugComponent},
 {path:'home/skin',component: HomeSkinComponent},
-{path:'home/details',component: HomeDetailsComponent},
+
 {path:'home/cart',component: HomeCartComponent},
-{path:'home/pharmacy',component: HomePharmacyComponent},
+
 
 
 
@@ -145,9 +143,7 @@ const appRoutes: Routes = [
     AboutDrugComponent,
     HomeContactComponent,
     HomeSkinComponent,
-    HomeDetailsComponent,
     HomeCartComponent,
-    HomePharmacyComponent,
     ProfileAdminComponent,
     EditAdminComponent,
     NewDashboardComponent
