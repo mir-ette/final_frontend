@@ -37,9 +37,7 @@ import { HomeContactComponent } from './components/home-contact/home-contact.com
 import { HomeSkinComponent } from './components/home-skin/home-skin.component';
 import { HomeDetailsComponent } from './components/home-details/home-details.component';
 import { HomeCartComponent } from './components/home-cart/home-cart.component';
-import { HomeCompanyComponent } from './components/home-company/home-company.component';
 import { HomePharmacyComponent } from './components/home-pharmacy/home-pharmacy.component';
-import { HomeAddComponent } from './components/home-add/home-add.component';
 import { ProfileAdminComponent } from './profile-admin/profile-admin.component';
 import { EditAdminComponent } from './edit-admin/edit-admin.component';
 import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
@@ -77,9 +75,8 @@ const appRoutes: Routes = [
 {path:'home/skin',component: HomeSkinComponent},
 {path:'home/details',component: HomeDetailsComponent},
 {path:'home/cart',component: HomeCartComponent},
-{path:'home/company',component: HomeCompanyComponent},
 {path:'home/pharmacy',component: HomePharmacyComponent},
-{path:'home/add',component: HomeAddComponent},
+
 
 
 
@@ -150,9 +147,7 @@ const appRoutes: Routes = [
     HomeSkinComponent,
     HomeDetailsComponent,
     HomeCartComponent,
-    HomeCompanyComponent,
     HomePharmacyComponent,
-    HomeAddComponent,
     ProfileAdminComponent,
     EditAdminComponent,
     NewDashboardComponent
