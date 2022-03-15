@@ -31,6 +31,15 @@ import { HomeNavbarComponent } from './components/home-navbar/home-navbar.compon
 import { HomeFooterComponent } from './components/home-footer/home-footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { DrugSliderComponent } from './components/drug-slider/drug-slider.component';
+import { HomeDrugComponent } from './components/home-drug/home-drug.component';
+import { AboutDrugComponent } from './components/about-drug/about-drug.component';
+import { HomeContactComponent } from './components/home-contact/home-contact.component';
+import { HomeSkinComponent } from './components/home-skin/home-skin.component';
+import { HomeDetailsComponent } from './components/home-details/home-details.component';
+import { HomeCartComponent } from './components/home-cart/home-cart.component';
+import { HomeCompanyComponent } from './components/home-company/home-company.component';
+import { HomePharmacyComponent } from './components/home-pharmacy/home-pharmacy.component';
+import { HomeAddComponent } from './components/home-add/home-add.component';
 const appRoutes: Routes = [
     {path:'',component:HomeComponent,canActivate:[AuthGuardGuard]  },
     {path:'home',component:HomePageComponent},
@@ -58,6 +67,24 @@ const appRoutes: Routes = [
   ////////////////////////////////////////////////
   {path:'dashboard',component:DashboardComponent
   },
+  ///////////////////////////////////////////////
+{path:'home/drug',component: HomeDrugComponent},
+{path:'home/contact',component: HomeContactComponent},
+{path:'about/drug',component: AboutDrugComponent},
+{path:'home/skin',component: HomeSkinComponent},
+{path:'home/details',component: HomeDetailsComponent},
+{path:'home/cart',component: HomeCartComponent},
+{path:'home/company',component: HomeCompanyComponent},
+{path:'home/pharmacy',component: HomePharmacyComponent},
+{path:'home/add',component: HomeAddComponent},
+
+
+
+
+
+
+
+
 
   ]
 
@@ -137,7 +164,16 @@ const appRoutes: Routes = [
     HomeNavbarComponent,
     HomeFooterComponent,
     HomePageComponent,
-    DrugSliderComponent
+    DrugSliderComponent,
+    HomeDrugComponent,
+    AboutDrugComponent,
+    HomeContactComponent,
+    HomeSkinComponent,
+    HomeDetailsComponent,
+    HomeCartComponent,
+    HomeCompanyComponent,
+    HomePharmacyComponent,
+    HomeAddComponent
   ],
   imports: [
     BrowserModule,
