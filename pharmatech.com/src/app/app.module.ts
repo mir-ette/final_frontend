@@ -40,8 +40,11 @@ import { HomeCartComponent } from './components/home-cart/home-cart.component';
 import { HomeCompanyComponent } from './components/home-company/home-company.component';
 import { HomePharmacyComponent } from './components/home-pharmacy/home-pharmacy.component';
 import { HomeAddComponent } from './components/home-add/home-add.component';
+import { ProfileAdminComponent } from './profile-admin/profile-admin.component';
+import { EditAdminComponent } from './edit-admin/edit-admin.component';
+import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 const appRoutes: Routes = [
-    {path:'',component:HomeComponent,canActivate:[AuthGuardGuard]  },
+    {path:'',component:NewDashboardComponent,canActivate:[AuthGuardGuard]  },
     {path:'home',component:HomePageComponent},
     {path:'register',component:RegisterComponent,},
     {path:'login',component:LoginComponent,},
@@ -65,7 +68,7 @@ const appRoutes: Routes = [
   {path:'categories/add',component:CategoryAddComponent,
   },
   ////////////////////////////////////////////////
-  {path:'dashboard',component:DashboardComponent
+  {path:'users',component: HomeComponent
   },
   ///////////////////////////////////////////////
 {path:'home/drug',component: HomeDrugComponent},
@@ -85,6 +88,8 @@ const appRoutes: Routes = [
 
 
 
+  {path:'profile',component:ProfileAdminComponent},
+  {path:'profile/edit/:id',component:EditAdminComponent,},
 
   ]
 
@@ -115,32 +120,6 @@ const appRoutes: Routes = [
 
 
 
-
-
-
-
-
-
-
-//   ////////////////////////////////////////////////
-//   {
-//     path: 'dashboard', component: DashboardComponent
-//   },
-
-// ]
-
-
-
-
-
-
-
-  //{path:'',component:UsersComponent},
-  // {path:'edit/:id',component:UserEditComponent},
-  // {path:'drugs',component:DrugsComponent,childern:[
-    // {path:'/edit/:id',component:DrugEditComponent}
-  // ]}
-  // {path:'drugs/edit/:id',component:DrugEditComponent}
 
 @NgModule({
   declarations: [
@@ -173,7 +152,10 @@ const appRoutes: Routes = [
     HomeCartComponent,
     HomeCompanyComponent,
     HomePharmacyComponent,
-    HomeAddComponent
+    HomeAddComponent,
+    ProfileAdminComponent,
+    EditAdminComponent,
+    NewDashboardComponent
   ],
   imports: [
     BrowserModule,

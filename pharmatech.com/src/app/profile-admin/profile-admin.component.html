@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+ <div class="row "> 
+    <div class="col-auto col-md-3 col-xl-2   ">
+        
+       
+  <app-sidebar></app-sidebar>
+</div>
+
+  <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
+    <h1 style="padding:30px">profile</h1> <!-- ask -->  
+    <div style="padding-left:90%;">
+      <button type="button" class=" btn btn-warning" routerLink="/drugs/add" >add admin</button></div> <!-- ask -->
+      <table class="table table-hover my-0">
+        <thead>
+            <tr>
+                <th> user_name</th>
+                <th class="d-none d-xl-table-cell">email</th>
+                <th class="d-none d-xl-table-cell">password</th>
+              
+                <th class="d-none d-md-table-cell">city</th>
+                <th class="d-none d-md-table-cell">street</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
+                <td>{{user.name}}</td>
+                <td class="d-none d-xl-table-cell">{{user.email}}</td>
+                <td class="d-none d-xl-table-cell">{{user.password}}</td>
+                
+                <td class="d-none d-xl-table-cell">{{user.city}}</td>
+                <td class="d-none d-md-table-cell">{{user.street}}</td>
+                 <td class="d-none d-md-table-cell"><button class="btn-danger" (click)="deleteUserData(user.id)"><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning" routerLink="/edit/{{user.id}}"><i class="fa-solid fa-pen"></i></button></td> 
+            </tr>
+            <!-- hnkml kol elli ta7t zy elli fo2 w 3wzin ns2l ezay el btn n5liha dynamic -->
+     
+        </tbody>
+    </table>
+    
+    
+    
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+ 
+</div>
+</div>    
