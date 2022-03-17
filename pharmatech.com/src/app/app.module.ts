@@ -26,7 +26,6 @@ import { DrugAddComponent } from './drug-add/drug-add.component';
 import { OrderAddComponent } from './order-add/order-add.component';
 import { AuthGuardGuard } from './_guard/auth-guard.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ChildrenGuard } from './_guard/admin/children.guard';
 import { HomeNavbarComponent } from './components/home-navbar/home-navbar.component';
 import { HomeFooterComponent } from './components/home-footer/home-footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -39,58 +38,69 @@ import { HomeCartComponent } from './components/home-cart/home-cart.component';
 import { ProfileAdminComponent } from './profile-admin/profile-admin.component';
 import { EditAdminComponent } from './edit-admin/edit-admin.component';
 import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
+import { ChildenGuardGuard } from './_guard/admin/childen-guard.guard';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 const appRoutes: Routes = [
-    {path:'',component:NewDashboardComponent,canActivate:[AuthGuardGuard]  },
-    {path:'home',component:HomePageComponent},
-    {path:'register',component:RegisterComponent,},
-    {path:'login',component:LoginComponent,},
-    {path:'edit/:id',component:UserEditComponent,},
-    //////////////////////////////////
-    {path:'drugs',component:DrugsComponent
-    ,canActivate:[AuthGuardGuard]},
-    {path:'drugs/add',component:DrugAddComponent,
-  },
-    {path:'drugs/edit/:id',component:DrugEditComponent,},
-  //////////////////////////////////////////////
-    {path:'orders',component:OrdersComponent,
-  },
-  {path:'orders/add',component:OrderAddComponent,},
-  {path:'orders/edit/:id',component:OrderEditComponent,},
-  ////////////////////////////////////////////
+ // {
+  //  path: '',
+   // canActivate: [AuthGuardGuard],
+   //canActivateChild: [ChildenGuardGuard],
+    //children: [
+    //{ path: '', component: HomeComponent },
+      { path: '', component: NewDashboardComponent, canActivate: [AuthGuardGuard] },
+      { path: 'home', component: HomePageComponent },
 
-  {path:'categories',component:CategoriesComponent,
-  },
-  {path:'categories/edit/:id',component:CategoryEditComponent,},
-  {path:'categories/add',component:CategoryAddComponent,
-  },
-  ////////////////////////////////////////////////
-  {path:'users',component: HomeComponent
-  },
-  ///////////////////////////////////////////////
-{path:'home/drug',component: HomeDrugComponent},
-{path:'home/contact',component: HomeContactComponent},
-{path:'about',component: AboutDrugComponent},
-{path:'home/skin',component: HomeSkinComponent},
+      { path: 'edit/:id', component: UserEditComponent,canActivate: [AuthGuardGuard], },
+      //////////////////////////////////
+      {
+        path: 'drugs', component: DrugsComponent
+        ,canActivate: [AuthGuardGuard],
+      },
+      {
+        path: 'drugs/add', component: DrugAddComponent,canActivate: [AuthGuardGuard],
+      },
+      { path: 'drugs/edit/:id', component: DrugEditComponent,canActivate: [AuthGuardGuard], },
+      //////////////////////////////////////////////
+      {
+        path: 'orders', component: OrdersComponent,canActivate: [AuthGuardGuard],
+      },
+      { path: 'orders/add', component: OrderAddComponent,canActivate: [AuthGuardGuard], },
+      { path: 'orders/edit/:id', component: OrderEditComponent,canActivate: [AuthGuardGuard], },
+      ////////////////////////////////////////////
 
-{path:'home/cart',component: HomeCartComponent},
+      {
+        path: 'categories', component: CategoriesComponent,canActivate: [AuthGuardGuard],
+      },
+      { path: 'categories/edit/:id', component: CategoryEditComponent,canActivate: [AuthGuardGuard], },
+      {
+        path: 'categories/add', component: CategoryAddComponent,canActivate: [AuthGuardGuard],
+      },
+      ////////////////////////////////////////////////
+      {
+        path: 'users', component: HomeComponent ,canActivate: [AuthGuardGuard],
+      },
+      ///////////////////////////////////////////////
+      { path: 'home/drug', component: HomeDrugComponent },
+      { path: 'home/contact', component: HomeContactComponent },
+      { path: 'about', component: AboutDrugComponent },
+      { path: 'home/skin', component: HomeSkinComponent },
 
+      { path: 'home/cart', component: HomeCartComponent },
 
+   // ]
+ // },
 
+  { path: 'register', component: RegisterComponent, },
+  { path: 'login', component: LoginComponent, },
+  { path: 'profile', component: ProfileAdminComponent,canActivate: [AuthGuardGuard], },
+  { path: 'profile/edit/:id', component: EditAdminComponent,canActivate: [AuthGuardGuard], },
 
+]
 
-
-
-
-
-
-  {path:'profile',component:ProfileAdminComponent},
-  {path:'profile/edit/:id',component:EditAdminComponent,},
-
-  ]
-
-  ///////////////////////////////////////////////
-  //,pathMatch:'full'
-  //canActivateChild:[AuthGuardGuard],
+///////////////////////////////////////////////
+//,pathMatch:'full'
+//canActivateChild:[AuthGuardGuard],
 //   {
 //     path: '', component: HomeComponent, 
 //     canActivate: [AuthGuardGuard], 
@@ -150,15 +160,17 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     // RouterModule.forRoot(routes),
 
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
+ 
     ToastrModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    CarouselModule,
 
 
   ],
