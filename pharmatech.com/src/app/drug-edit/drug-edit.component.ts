@@ -23,6 +23,8 @@ export class DrugEditComponent implements OnInit {
 getData(){
   this.dataService.getDrugById(this.id).subscribe(res=>{
     this.data=res;
+    console.log(this.id);
+    
     this.drug=this.data
   })
 }

@@ -7,38 +7,43 @@ import { User } from 'src/app/user';
   styleUrls: ['./profile-admin.component.css']
 })
 export class ProfileAdminComponent implements OnInit {
-  users:any;
-  user=new User();
+  users: any;
+  user = new User();
   p: number = 1;
-  data:any;
-  constructor(private dataService:DataService) { }
+  data: any;
+  role: any;
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.getUsersData()
   }
-  getUsersData(){ 
+  getUsersData() {
 
-      if(this.data['role'] == "admin"){
-       this.dataService.getUsersData().subscribe(res=>{
-          this.users=res;
-         });
-      // console.log('yes');
-       
-      }
-      else{ console.log('no');
-      
-    
+    if (this.data['role'] == "admin") {
+      this.dataService.getUsersData().subscribe(res => {
+        this.users = res;
+      });
+      console.log('yes');
+
+    }
+    else {
+      console.log('no');
+
+
     }
   }
-     deleteUserData(id:any){
-      this.dataService.deleteUserData(id).subscribe(res=>{
-       this.getUsersData();
-      })
+  updateuser() {
     
-     }
+  }
+  deleteUserData(id: any) {
+    this.dataService.deleteUserData(id).subscribe(res => {
+      this.getUsersData();
+    })
+
+  }
 
 
-   }
+}
 
 
 

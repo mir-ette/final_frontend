@@ -25,7 +25,7 @@ export class AuthGuardGuard implements CanActivate {
         else{
           this.router.navigate(['/home']) //navigate to home page
         }
-        alert('u r not an admin')
+        alert('u r not an admin') // ob2i sheliha
       }
       else{
         this.router.navigate(['/home']) //navigate to home page
