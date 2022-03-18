@@ -3,7 +3,7 @@
 
 
 <!-- Product Area Start -->
-<div class="product-area bg-image-1 pt-90 pb-95">
+<!-- <div class="product-area bg-image-1 pt-90 pb-95">
     <div class="container">
         <div class="product-top-bar style-two section-border mb-55">
             <div class="section-title-wrap text-center">
@@ -175,7 +175,44 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="row">
+    <div class="col-4" *ngFor="let drug of drugs | paginate: { itemsPerPage: 3, currentPage: p } ">
+        <div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">name:{{drug.trade_name_en}}</h5>
+              
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> price:{{drug.price}}</li>
+              <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Vestibulum at eros</li> -->
+            </ul>
+            <div class="card-body">
+              <a routerLink="/home/details/{{drug.id}}" class="card-link">Card link</a>
+              <a href="" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div>
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Product Area Start -->
 <div class="product-area bg-image-1 pt-90 pb-95">
     <div class="container">

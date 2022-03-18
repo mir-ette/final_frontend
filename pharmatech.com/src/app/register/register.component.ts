@@ -70,6 +70,6 @@ export class RegisterComponent implements OnInit {
     this.dataService.insertUserData(this.user).subscribe(res => {
       console.log(res);
     })
-    this.router.navigate(['/login'])
+    this.router.navigate(['/home'])
     }
 }

@@ -20,8 +20,8 @@ getData(){
 deleteData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteDrug/'+id);
 }
-getDrugById(id:any){
-  return this.http.get(environment.apiUrl+'/api/drugs'+id);
+getDrugById(id:number){
+  return this.http.get(environment.apiUrl+'/api/drug/'+id);
 }
 insertData(data:any){
   return this.http.post(environment.apiUrl+'/api/addDrug/',data);
@@ -30,6 +30,20 @@ insertData(data:any){
 updateData(id:any,data:any){
   return this.http.put(environment.apiUrl+'/api/updateDrug/'+id,data);
 }
+
+productsByCategory(category_id:any){
+  
+  
+  return this.http.get(environment.apiUrl+'/api/drugs?category_id='+category_id);
+
+}
+//  productsByCategory(id:any){
+
+  
+//    return this.http.get(environment.apiUrl+'/api/productsByCategory/'+id);
+
+//  }
+
 ////////////////////////////////////////////////////////
 getUsersData(){
   return this.http.get(environment.apiUrl+'/api/users');
@@ -56,7 +70,7 @@ deleteOrderData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteOrder/'+id);
 }
 getOrderById(id:any){
-  return this.http.get(environment.apiUrl+'/api/orders'+id);
+  return this.http.get(environment.apiUrl+'/api/orders/'+id);
 }
 insertOrderData(data:any){
   return this.http.post(environment.apiUrl+'/api/addOrder/',data);
@@ -65,6 +79,7 @@ insertOrderData(data:any){
 updateOrderData(id:any,data:any){
   return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
 }
+
 
 /////////////////////////////////////////////////////////////////////////
 

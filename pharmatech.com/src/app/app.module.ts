@@ -40,6 +40,7 @@ import { EditAdminComponent } from './edit-admin/edit-admin.component';
 import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 import { ChildenGuardGuard } from './_guard/admin/childen-guard.guard';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { DetailsComponent } from './components/details/details.component';
 
 const appRoutes: Routes = [
  // {
@@ -88,11 +89,13 @@ const appRoutes: Routes = [
 
       { path: 'home/cart', component: HomeCartComponent },
 
+ { path: 'home/details/:id', component:  DetailsComponent },
+      
    // ]
  // },
 
   { path: 'register', component: RegisterComponent, },
-  { path: 'login', component: LoginComponent, },
+  { path: 'login', component: LoginComponent, canActivateChild: [ChildenGuardGuard]},
   { path: 'profile', component: ProfileAdminComponent,canActivate: [AuthGuardGuard], },
   { path: 'profile/edit/:id', component: EditAdminComponent,canActivate: [AuthGuardGuard], },
 
@@ -156,7 +159,8 @@ const appRoutes: Routes = [
     HomeCartComponent,
     ProfileAdminComponent,
     EditAdminComponent,
-    NewDashboardComponent
+    NewDashboardComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
