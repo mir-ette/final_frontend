@@ -160,7 +160,7 @@
     <div class="card-body">
       <h5 class="card-title">Special title treatment</h5>
       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a  class="btn btn-primary">Go somewhere</a>
+      <a  class="btn btn-primary" (click)="getById(this.id)"  >Go somewhere</a>
     </div>
   </div>
   <table class="table table-hover my-0" >
@@ -173,11 +173,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let drugg of drug ">
+        <!-- <tr *ngFor="let drugg of drug ">
           <td class="d-none d-xl-table-cell">{{drugg.category_id}}</td>
-            
+             -->
            
-        </tr>
+        <!-- </tr> -->
         <!-- hnkml kol elli ta7t zy elli fo2 w 3wzin ns2l ezay el btn n5liha dynamic -->
         
        

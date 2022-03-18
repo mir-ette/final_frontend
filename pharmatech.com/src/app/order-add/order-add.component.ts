@@ -38,6 +38,6 @@ export class OrderAddComponent implements OnInit {
     console.log(res);
     
   })
-  this.router.navigate(['orders']);
+  this.router.navigate(['/orders']);
    }
 }

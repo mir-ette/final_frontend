@@ -20,7 +20,7 @@ getData(){
 deleteData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteDrug/'+id);
 }
-getDrugById(id:number){
+getDrugById(id:any){
   return this.http.get(environment.apiUrl+'/api/drug/'+id);
 }
 insertData(data:any){
@@ -37,10 +37,10 @@ productsByCategory(category_id:any){
   return this.http.get(environment.apiUrl+'/api/drugs?category_id='+category_id);
 
 }
-//  productsByCategory(id:any){
+//  productsByCategory(category_id:any){
 
   
-//    return this.http.get(environment.apiUrl+'/api/productsByCategory/'+id);
+//    return this.http.get(environment.apiUrl+'/api/productsByCategory/'+category_id);
 
 //  }
 
@@ -52,7 +52,7 @@ deleteUserData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteUser/'+id);
 }
 getUserById(id:any){
-  return this.http.get(environment.apiUrl+'/api/users'+id);
+  return this.http.get(environment.apiUrl+'/api/users/'+id);
 }
 insertUserData(data:any){
   return this.http.post(environment.apiUrl+'/api/addUser/',data);
@@ -90,7 +90,7 @@ deleteCategoryData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteCategory/'+id);
 }
 getCategoryById(id:any){
-  return this.http.get(environment.apiUrl+'/api/categories'+id);
+  return this.http.get(environment.apiUrl+'/api/categories/'+id);
 }
 insertCategoryData(data:any){
   return this.http.post(environment.apiUrl+'/api/addCategory/',data);
