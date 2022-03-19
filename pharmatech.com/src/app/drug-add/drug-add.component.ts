@@ -18,24 +18,33 @@ export class DrugAddComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private dataService:DataService,private router:Router) { }
 
   ngOnInit(): void {
-    this.getDrugsData()
+    this.getDRUGSData()
   }
 
-  getDrugsData(){
+  getDRUGSData(){
     this.dataService.getData().subscribe(res=>{
       this.drugs=res;
      })
   
-   }// hnshil el :any awel mal el api yet7at
+   }
   
 
   insertData(){
     this.dataService.insertData(this.drug).subscribe(res=>{
-      // this.getDrugsData
+       this.data=res
       console.log(res);
     })
     this.router.navigate(['/drugs']);
   }
+
+
+
+
+
+
+
+
+
   // gotoDrugs(){
   //   this.router.navigate(['/drugs']);
   // }

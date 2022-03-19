@@ -19,7 +19,8 @@ id:any;
   p: number = 1;
   
   drug:any;
-  catid:any;
+  // catid:any;
+  category_id:any;
   // params:any;
   constructor(private dataService:DataService, private activatedRoute:ActivatedRoute,private router:Router) { 
     
@@ -28,18 +29,18 @@ id:any;
   ngOnInit():void {
   
     this.activatedRoute.paramMap.subscribe(params=>{
- this.catid=params.get('id');
-console.log(this.catid);
+ this.category_id=params.get('id');
+console.log(this.id);
 
     })
     
-this.getById(this.catid);
+this.getById(this.category_id);
   }
   getById(id:any){ 
      this.dataService.productsByCategory(id).subscribe(res=>{
   
        this.drug=res;
-       console.log(this.catid);
+       console.log( this.drug);
       
     // this.drug=this.data
     })
