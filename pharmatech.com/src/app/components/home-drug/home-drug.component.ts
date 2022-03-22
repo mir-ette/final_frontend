@@ -3,6 +3,7 @@ import { DataService } from 'src/app/service/data.service';
 
 import { Drug } from 'src/app/drug';
 import { Router } from '@angular/router';
+import { CartapiService } from 'src/app/service/cartapi.service';
 
 
 @Component({
@@ -17,10 +18,14 @@ export class HomeDrugComponent implements OnInit {
   drugs:any;
   drug= new Drug();
   
-  constructor(private dataService:DataService,private router:Router) { }
+  constructor(private dataService:DataService,private router:Router,private apiCart:CartapiService) { }
 
   ngOnInit(): void {
     this.getDrugsData()
+    this.drugs.forEach((a:any)=> {
+      Object.assign(a,{quantity:1,total:a.price})
+      
+    });
   }
 
   getDrugsData(){
@@ -28,8 +33,15 @@ export class HomeDrugComponent implements OnInit {
       this.drugs=res;
      })
 
+    }
 
+addtoCart(drug:any){
+  this.apiCart.addTocart(drug)
+ 
+  
+  
 
 
 }
 }
+

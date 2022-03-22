@@ -34,7 +34,7 @@ updateData(id:any,data:any){
 productsByCategory(category_id:any){
   
   
-  return this.http.get(environment.apiUrl+'/api/drugs?category_id='+category_id);
+  return this.http.get(environment.apiUrl+'/api/productsByCategory/'+category_id);
 
 }
 //  productsByCategory(category_id:any){

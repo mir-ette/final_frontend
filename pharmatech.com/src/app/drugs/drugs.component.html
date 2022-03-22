@@ -28,6 +28,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let drug of drugs | paginate: { itemsPerPage: 5, currentPage: p }">
+              <!-- <td class="d-none d-md-table-cell"><img src="{{drug.image}}"></td> -->
               <td class="d-none d-md-table-cell">{{drug.image}}</td>
               <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
                 <td>{{drug.trade_name_ar}}</td>

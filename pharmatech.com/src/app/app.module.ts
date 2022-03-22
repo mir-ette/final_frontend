@@ -41,6 +41,7 @@ import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 import { ChildenGuardGuard } from './_guard/admin/childen-guard.guard';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { DetailsComponent } from './components/details/details.component';
+import { CommonModule } from '@angular/common';
 
 const appRoutes: Routes = [
  // {
@@ -160,7 +161,9 @@ const appRoutes: Routes = [
     ProfileAdminComponent,
     EditAdminComponent,
     NewDashboardComponent,
-    DetailsComponent
+    DetailsComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -176,7 +179,7 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     CarouselModule,
 
-
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

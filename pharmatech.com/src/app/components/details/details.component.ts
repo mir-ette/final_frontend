@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Drug } from 'src/app/drug';
 import { DataService } from 'src/app/service/data.service';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -12,10 +13,17 @@ import { Router } from '@angular/router';
 export class DetailsComponent implements OnInit {
   data: any;
   id: any;
-  // drugs:any;
-  // drug= new Drug();
-  drug: any;
-  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router) { }
+   drugs:any;
+   //drug= new Drug();
+   drug: any;
+
+  //  drug!:Drug;
+  constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router,private cartService:CartService) {
+    // route.params.subscribe((params)=>{
+    //   if(params['id'])
+    //   this.drug=dataService.getDrugById(params['id'])
+    // })
+   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -29,7 +37,10 @@ export class DetailsComponent implements OnInit {
       console.log(this.drug);
     })
   }
-
+addToCart(){
+  this.cartService.addToCart(this.drug)
+  this.router.navigateByUrl('/home/cart')
+}
 }
 // ngOnInit(): void {
 //   this.id=this.route.snapshot.params['id'];

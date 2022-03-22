@@ -15,86 +15,70 @@
 </div>
 <!-- Breadcrumb Area End -->
  <!-- shopping-cart-area start -->
-<div class="cart-main-area ptb-100">
-    <div class="container">
-        <h3 class="page-title">Your cart items</h3>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <form action="#">
-                    <div class="table-content table-responsive">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Product Name</th>
-                                    <th>Until Price</th>
-                                    <th>Qty</th>
-                                    <th>Subtotal</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/.assets/img/cart/cart-3.jpg" alt=""></a>
-                                    </td>
-                                    <td class="product-name"><a href="#">Dutchman's Breeches </a></td>
-                                    <td class="product-price-cart"><span class="amount">$260.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="pro-dec-cart">
-                                            <input class="cart-plus-minus-box" type="text" value="02" name="qtybutton">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$110.00</td>
-                                    <td class="product-remove">
-                                        <a href="#"><i class="fa fa-pencil"></i></a>
-                                        <a href="#"><i class="fa fa-times"></i></a>
-                                   </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/.assets/img/cart/cart-4.jpg" alt=""></a>
-                                    </td>
-                                    <td class="product-name"><a href="#">Flowers Bouquet Pink</a></td>
-                                    <td class="product-price-cart"><span class="amount">$150.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="pro-dec-cart">
-                                            <input class="cart-plus-minus-box" type="text" value="02" name="qtybutton">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$150.00</td>
-                                    <td class="product-remove">
-                                        <a href="#"><i class="fa fa-pencil"></i></a>
-                                        <a href="#"><i class="fa fa-times"></i></a>
-                                   </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/.assets/img/cart/cart-5.jpg" alt=""></a>
-                                    </td>
-                                    <td class="product-name"><a href="#">Evergreen Candytuft </a></td>
-                                    <td class="product-price-cart"><span class="amount">$170.00</span></td>
-                                    <td class="product-quantity">
-                                        <div class="pro-dec-cart">
-                                            <input class="cart-plus-minus-box" type="text" value="02" name="qtybutton">
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal">$170.00</td>
-                                    <td class="product-remove">
-                                        <a href="#"><i class="fa fa-pencil"></i></a>
-                                        <a href="#"><i class="fa fa-times"></i></a>
-                                   </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
 
-                </form>
-              
-            </div>
-        </div>
-    </div>
+
+<ng-container *ngIf="drugs.length!=0">
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">index</th>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+            <th scope="col">quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngfor="let drug of drugs ; let i=index " >
+            <th scope="row">{{i+1}}}</th>
+            <td>{{drug.price}}</td>
+            <td>{{drug.trade_name_en}}</td>
+            <td><button class="btn "(click)="removeDrug(drug)" ><i class="fa fa-pencil"></i></button></td>
+          </tr>
+        </tbody>
+    </table>
+ <button class="btn btn-danger" (click)="removeAllDrugs()">empty</button> 
+
+<button class="btn btn-warning "routerLink="/home/drug">shop more</button>
+
+<button class="btn btn-success">checkout</button>
+<strong>total:${{grandTotal}}</strong>
+</ng-container> 
+ 
+
+
+<!-- 
+<ul>
+    <li *ngFor="let cartItem of cart.drugs">
+        <div>
+            <a routerLink="/home/details/{{cartItem.drug.id}}" >
+                {{cartItem.drug.trade_name_en}}
+            </a>
+
 </div>
+    </li>
+    
+</ul> -->
+
+
+
+
+<ng-container *ngIf="drugs.length==0">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">my cart</h5>
+          <h6 class="card-subtitle mb-2 text-muted">  ur cart is empty</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <button routerLink="/home/drug" class='btn'>shop now</button>
+        </div>
+      </div>
+</ng-container>
+
+
+
+
 <!-- Footer style Start -->
 <footer class="footer-area pt-75 gray-bg-3">
     <div class="footer-top gray-bg-3 pb-35">

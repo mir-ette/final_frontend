@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartapiService } from 'src/app/service/cartapi.service';
 
 @Component({
   selector: 'app-home-navbar',
@@ -7,10 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home-navbar.component.css']
 })
 export class HomeNavbarComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  totalItemNumber:number=0;
+  constructor(private router:Router,private apiCart:CartapiService) { }
 
   ngOnInit(): void {
+    this.apiCart.getDrugData().subscribe(res=>{
+
+      this.totalItemNumber=res.length;
+    })
   }
 
   logout(){

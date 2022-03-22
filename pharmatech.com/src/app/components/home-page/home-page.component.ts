@@ -12,45 +12,56 @@ import { ActivatedRoute, Router,Params } from '@angular/router';
 export class HomePageComponent implements OnInit {
   data:any;
 id:any;
- // drugs:any;
-  // drug= new Drug();
+ drugs:any;
+  drug= new Drug();
   categories:any;
   category= new Category();
   p: number = 1;
   
-  drug:any;
-  // catid:any;
+   //drug:any;
+  catid:any;
   category_id:any;
   // params:any;
   constructor(private dataService:DataService, private activatedRoute:ActivatedRoute,private router:Router) { 
     
   }
 
-  ngOnInit():void {
+//   ngOnInit():void {
   
-    this.activatedRoute.paramMap.subscribe(params=>{
- this.category_id=params.get('id');
-console.log(this.id);
+//  this.activatedRoute.paramMap.subscribe(params=>{
+//  this.catid=params.get('id');
+// console.log(this.catid);
 
-    })
+//     })
     
-this.getById(this.category_id);
-  }
-  getById(id:any){ 
-     this.dataService.productsByCategory(id).subscribe(res=>{
+// this.getById(this.catid);
+//   }
+
   
-       this.drug=res;
-       console.log( this.drug);
+//   getById(id:any){ 
+//      this.dataService.productsByCategory(id).subscribe(res=>{
+  
+//        this.drugs=res;
+//        console.log( this.drugs);
       
-    // this.drug=this.data
-    })
-   }
+//     // this.drug=this.data
+//     })
+//    }
 
-// ngOnInit(): void {
-//   this.id=this.activatedRoute.snapshot.params['id'];
-//   this.getData();
-// }
+ngOnInit(): void {
+   this. catid=this.activatedRoute.snapshot.params[' id'];
+  this.getDrugsData(this. catid);
+}
 
+getDrugsData(id:any){
+  this.dataService.productsByCategory(id).subscribe(res=>{
+    this.data=res;
+    console.log(this.category_id);
+    
+    this.drug=this.data
+   })
+
+ }
 // getData(){
 //   this.dataService.productsByCategory(this.id).subscribe(res=>{
 //     this.data=res;
