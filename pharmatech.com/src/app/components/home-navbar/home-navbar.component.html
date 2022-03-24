@@ -1,6 +1,12 @@
-
- <!-- header start -->
- <header class="header-area gray-bg clearfix">
+<!-- header start -->
+<style>
+    #logout:hover {
+        cursor: pointer;
+        color: darkblue;
+    }
+    
+</style>
+<header class="header-area gray-bg clearfix">
     <div class="header-bottom">
         <div class="container">
             <div class="row">
@@ -19,33 +25,40 @@
                                     <li class="top-hover"><a routerLink="/home">home</a></li>
                                     <li><a routerLink="/about">about</a></li>
                                     <!-- <li class="top-hover"><a >Drug</a> -->
-                                        <!-- <ul class="submenu"> -->
-                                            <li><a routerLink="/home/drug">Drugs</a></li>
-        
-                                            <!-- <li><a routerLink="/home/skin" >Skin & hair Care</a></li> -->
-                                            
-                                        <!-- </ul>
-                                    </li> -->
-                                     <!-- <li><a  routerLink="/home/cart">cart page</a></li>  -->
-                                    <li><a routerLink="/login">Login</a></li>
-                                    <!-- <li><a routerLink="/register">Register</a></li> -->
-                                 
-                                    <li><a routerLink="/home/contact">contact</a></li>
-                                    <li><button  routerLink="/home/cart" class="btn btn-primary">
-                                        <i class="fas fa-cart-plus">
+                                    <!-- <ul class="submenu"> -->
+                                    <li><a routerLink="/home/drug">Drugs</a></li>
 
-                                        </i>
-                                        <div class="badge bg-danger">{{totalItemNumber}}</div>
-                                    </button>
-                                   </li>
-                                   
+                                    <!-- <li><a routerLink="/home/skin" >Skin & hair Care</a></li> -->
+
+                                    <!-- </ul>
+                                    </li> -->
+                                    <!-- <li><a  routerLink="/home/cart">cart page</a></li>  -->
+
+                                    <span *ngIf="!token">
+                                        <li><a routerLink="/login">Login</a></li>
+                                    </span>
+
+                                    <span *ngIf="token">
+                                        <li (click)="logout()"><a id="logout">Logout</a></li>
+                                    </span>
+                                    <!-- <li><a routerLink="/register">Register</a></li> -->
+
+                                    <li><a routerLink="/home/contact">contact</a></li>
+                                    <li><button routerLink="/home/cart" class="btn btn-primary">
+                                            <i class="fas fa-cart-plus">
+
+                                            </i>
+                                            <div class="badge bg-danger">{{totalItemNumber}}</div>
+                                        </button>
+                                    </li>
+
                                     <!-- <li><a href="">logout</a></li> -->
                                 </ul>
                             </nav>
-                            
+
                         </div>
                         <div class="header-currency">
-                            
+
                         </div>
                         <div class="header-cart">
                             <a href="#">

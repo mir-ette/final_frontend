@@ -8,17 +8,25 @@ import { CartapiService } from 'src/app/service/cartapi.service';
   styleUrls: ['./home-navbar.component.css']
 })
 export class HomeNavbarComponent implements OnInit {
-  totalItemNumber:number=0;
-  constructor(private router:Router,private apiCart:CartapiService) { }
+
+  totalItemNumber: number = 0;
+  token: any;
+  constructor(private router: Router, private apiCart: CartapiService) { }
 
   ngOnInit(): void {
-    this.apiCart.getDrugData().subscribe(res=>{
 
-      this.totalItemNumber=res.length;
+    this.apiCart.getDrugData().subscribe(res => {
+
+      this.totalItemNumber = res.length;
     })
+
+    if (localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+    }
+
   }
 
-  logout(){
+  logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/login'])
   }
