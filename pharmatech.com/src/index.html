@@ -42,9 +42,21 @@
     <!-- <script src="assets/.assets/js/owl.carousel.min.js"></script> -->
     <script src="assets/.assets/js/plugins.js"></script>
     <script src="assets/.assets/js/main.js"></script>
-   
-     
-
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+      });
+      </script>
+      <script> 
+     function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+</script>
 
 </body>
 </html>

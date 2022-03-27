@@ -41,8 +41,10 @@ import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 import { ChildenGuardGuard } from './_guard/admin/childen-guard.guard';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { DetailsComponent } from './components/details/details.component';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
+import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 const appRoutes: Routes = [
  // {
   //  path: '',
@@ -178,8 +180,9 @@ const appRoutes: Routes = [
     ToastrModule.forRoot(),
     NgxPaginationModule,
     CarouselModule,
-
-    CommonModule
+    NgxParallaxScrollModule,
+    // CommonModule
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

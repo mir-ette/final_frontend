@@ -43,6 +43,9 @@ productsByCategory(category_id:any){
 //    return this.http.get(environment.apiUrl+'/api/productsByCategory/'+category_id);
 
 //  }
+getFilteredData(data:any){
+  return this.http.post(environment.apiUrl+'/api/fetch_multiple_drugs/',data);
+}
 
 ////////////////////////////////////////////////////////
 getUsersData(){

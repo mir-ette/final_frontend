@@ -22,12 +22,12 @@ cart!:Cart;
   constructor( private apiCart:CartapiService, private cartService:CartService) { }
 
   ngOnInit(): void {
-    this.apiCart.getDrugData().subscribe(res=>{
-      this.drugs=res;
-      this.grandTotal=this.apiCart.getTotalAmount();
-      console.log(res);
+    // this.apiCart.getDrugData().subscribe(res=>{
+    //   this.drugs=res;
+    //   this.grandTotal=this.apiCart.getTotalAmount();
+    //   console.log(res);
       
-    })
+    // })
 
 
 
@@ -37,34 +37,34 @@ cart!:Cart;
 
 
 
-  setCart(){
-    this.cart=this.cartService.getCart()
-  }
+  // setCart(){
+  //   this.cart=this.cartService.getCart()
+  // }
 
 
-  removeFromCart(cartItem:CartItem){
-    this.cartService.removeFromCart(cartItem.drug.id)
-    this.setCart()
-  }
+  // removeFromCart(cartItem:CartItem){
+  //   this.cartService.removeFromCart(cartItem.drug.id)
+  //   this.setCart()
+  // }
 
-  changeQuantity(cartItem:CartItem, quantityInString:string){
-    const quantity =parseInt( quantityInString);
-    this.cartService.changeQuantity(cartItem.drug.id,quantity)
-    this.setCart();
-  }
-
-
-
+  // changeQuantity(cartItem:CartItem, quantityInString:string){
+  //   const quantity =parseInt( quantityInString);
+  //   this.cartService.changeQuantity(cartItem.drug.id,quantity)
+  //   this.setCart();
+  // }
 
 
 
 
 
 
-removeDrug(drug:any){ 
-  this.apiCart.removeCartData(drug)
-}
-removeAllDrugs(){
-  this.apiCart.removeAllCart();
-}
+
+
+
+// removeDrug(drug:any){ 
+//   this.apiCart.removeCartData(drug)
+// }
+// removeAllDrugs(){
+//   this.apiCart.removeAllCart();
+// }
 }

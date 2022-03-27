@@ -1,10 +1,22 @@
    <!-- header start -->
 <app-home-navbar></app-home-navbar>
-
+<div class="search-hero" style="width: 250px; padding-left: 50px;">
+    <input class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" placeholder="search by ">
+   <!-- <ul>
+       <li *ngFor="let drug of drugs" >
+        <input type="checkbox" (change)="filterDrugs($event)"[id]="drug.id" > {{drug.trade_name_en}}
+       </li>
+   </ul>
+   <button class="btn btn-primary"(click)="getFilterData()" >apply filter</button>
+   <div class="card" *ngFor="let drugs of filter_data">
+<div class="card-body">{{drugs.trade_name_en}}</div>
+   </div> -->
+</div>
 
 
 <div class="row">
-    <div class="col-4" *ngFor="let drug of drugs | paginate: { itemsPerPage: 3, currentPage: p } ">
+    <app-details class="col-4" *ngFor="let drug of drugs |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } " [drugItem] ="drug"></app-details>
+   
         <div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
@@ -17,11 +29,12 @@
               <li class="list-group-item">Vestibulum at eros</li> -->
             </ul>
             <div class="card-body">
-              <a routerLink="/home/details/{{drug.id}}" class="card-link">Card link</a>
-              <button (click)="addtoCart( this.drug)" class="btn">add to cart</button>
+              <a routerLink="/home/details/{{drugs.id}}" class="card-link">see datails</a>
+              <button (click)="addtoCart( )" class="btn">add to cart</button>
             </div>
           </div>
-    </div>
+          <!-- <div class="col-4" *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } ">
+    </div> -->
     <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
 

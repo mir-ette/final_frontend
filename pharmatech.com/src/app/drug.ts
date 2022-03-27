@@ -8,5 +8,6 @@ export class Drug {
     production_date:any;
     expiry_date:any;
  category_id:any;
+ drug_quantity:any;
 
 }

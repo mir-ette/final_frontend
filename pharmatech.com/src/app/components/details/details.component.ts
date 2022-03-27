@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Drug } from 'src/app/drug';
 import { DataService } from 'src/app/service/data.service';
@@ -15,8 +15,8 @@ export class DetailsComponent implements OnInit {
   id: any;
    drugs:any;
    //drug= new Drug();
-   drug: any;
-
+   drug: any=[];
+@Input()drugItem!:Drug;
   //  drug!:Drug;
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router,private cartService:CartService) {
     // route.params.subscribe((params)=>{
