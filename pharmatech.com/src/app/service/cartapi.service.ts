@@ -70,6 +70,7 @@ export class CartapiService {
     this.userData = jwt_decode(this.token);
     this.id = this.userData.user_id;
     this.getCart(this.id).subscribe((res: any) => {
+// console.log(res);
 
       let cartItems: { drugs: Drug[] } = { drugs: [] }
 

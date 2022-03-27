@@ -40,6 +40,7 @@ export class HomeDrugComponent implements OnInit {
       () => { }
     );
 
+    this.drugItem;
 
 
 
@@ -49,6 +50,8 @@ export class HomeDrugComponent implements OnInit {
     this.dataService.getData().subscribe(res => {
       this.drugs = res;
       console.log(this.drugs);
+      console.log(this.drugItem);
+      
       
     })
 

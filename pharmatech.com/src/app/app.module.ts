@@ -45,6 +45,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DrugItemComponent } from './components/drug-item/drug-item.component';
 const appRoutes: Routes = [
  // {
   //  path: '',
@@ -164,6 +165,7 @@ const appRoutes: Routes = [
     EditAdminComponent,
     NewDashboardComponent,
     DetailsComponent,
+    DrugItemComponent,
     
     
   ],

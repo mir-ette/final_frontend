@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">name:{{drugItem.trade_name_en}}</h5>
+      
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> price:{{drugItem.price}}</li>
+      <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li> -->
+    </ul>
+    <div class="card-body">
+      <a routerLink="/home/details/{{drugItem.id}}" class="card-link">see datails</a>
+      <button (click)="addtoCart( )" class="btn">add to cart</button>
+    </div>
+  </div>

@@ -15,9 +15,10 @@
 
 
 <div class="row">
-    <app-details class="col-4" *ngFor="let drug of drugs |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } " [drugItem] ="drug"></app-details>
+    <!-- <div class="col-4" *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } "> -->
+        <app-drug-item class="col-4"  *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p }" [drugItem] ="drug"></app-drug-item>
    
-        <div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
+        <!-- <div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">name:{{drug.trade_name_en}}</h5>
@@ -25,16 +26,15 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item"> price:{{drug.price}}</li>
-              <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+              <! <li class="list-group-item">Dapibus ac facilisis in</li>
               <li class="list-group-item">Vestibulum at eros</li> -->
-            </ul>
-            <div class="card-body">
-              <a routerLink="/home/details/{{drugs.id}}" class="card-link">see datails</a>
+            <!-- </ul> -->
+            <!-- <div class="card-body">
+              <a routerLink="/home/details/{{drug.id}}" class="card-link">see datails</a>
               <button (click)="addtoCart( )" class="btn">add to cart</button>
-            </div>
-          </div>
-          <!-- <div class="col-4" *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } ">
-    </div> -->
+            </div> -->
+          <!-- </div> --> 
+    <!-- </div> -->
     <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
 
