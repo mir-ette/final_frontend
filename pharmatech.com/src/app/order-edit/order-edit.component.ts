@@ -30,7 +30,7 @@ export class OrderEditComponent implements OnInit {
 
   updateOrderData(){
     this.dataService.updateOrderData(this.id,this.order).subscribe(res=>{
-      
+      this.getOrdersData();
     })
     this.router.navigate(['/orders'])
   }

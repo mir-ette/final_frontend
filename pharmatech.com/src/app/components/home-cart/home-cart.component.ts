@@ -4,7 +4,7 @@ import { Drug } from 'src/app/drug';
 import { CommonModule } from '@angular/common';
 import { Cart } from 'src/app/Cart';
 import { CartItem } from 'src/app/Cartitem'; 
-
+import { DataService } from 'src/app/service/data.service';
 import jwt_decode from "jwt-decode";
 
 @Component({
@@ -21,11 +21,12 @@ imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   userData: any;
   id: any;
   cart: any;
+  city:any;
   public totalPrice: number = 0;
 
  drug= new Drug();
 
-  constructor( private apiCart:CartapiService,) { }
+  constructor( private apiCart:CartapiService,private dataService:DataService) { }
 
   ngOnInit(): void {
     // this.apiCart.getDrugData().subscribe(res=>{
@@ -38,6 +39,7 @@ imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
     this.userData = localStorage.getItem('token');
     this.userData = jwt_decode(this.token);
     this.id = this.userData.user_id;
+    this.city =this.userData.city;
     this.getCart();
     this.apiCart.cartRecordList.subscribe((res: any) => {
       this.cart = res;
@@ -109,6 +111,16 @@ imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
       this.apiCart.cartHasBeenChanged.emit(res.drugs);
     });
   }
+
+
+  insertOrderData() {
+    this.dataService.insertOrderData(this.cart.drugs,this.city,this.id).subscribe(() => { })
+    this.apiCart.deleteCart(this.id).subscribe(() => {
+      this.apiCart.cartHasBeenChanged.emit([]);
+      this.cart.drugs = [];
+   });
+  }
+
 
 
 

@@ -32,12 +32,12 @@ export class OrderAddComponent implements OnInit {
    }
 
 
-   insertOrderData(){
-  this.dataService.insertOrderData(this.order).subscribe(res=>{
-    // this.getDrugsData
-    console.log(res);
+  //  insertOrderData(){
+  // this.dataService.insertOrderData(this.order).subscribe(res=>{
+  //   // this.getDrugsData
+  //   console.log(res);
     
-  })
-  this.router.navigate(['/orders']);
-   }
+  // })
+  // this.router.navigate(['/orders']);
+  //  }
 }

@@ -15,7 +15,7 @@ export class HomeDrugComponent implements OnInit {
  drugList: Drug[] = [];
 
   @Input() drugItem!: Drug ;
-
+  imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   data: any;
   p: number = 1;
   drugs: any=[]; //tb3 el filter wesh8ala

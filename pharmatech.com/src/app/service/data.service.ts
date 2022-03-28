@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
-import{HttpClient} from '@angular/common/http';
+import{HttpClient,HttpHeaders} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { orderInterface } from '../order';
+import jwtDecode from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  constructor(private http:HttpClient) { }
+ 
+
+
+  constructor(private http:HttpClient, private httpClient:HttpClient) { }
+
 registerUser(data:any){
   return this.http.post(environment.apiUrl+'/api/register/',data);
 }
@@ -75,13 +81,40 @@ deleteOrderData(id:any){
 getOrderById(id:any){
   return this.http.get(environment.apiUrl+'/api/orders/'+id);
 }
-insertOrderData(data:any){
-  return this.http.post(environment.apiUrl+'/api/addOrder/',data);
+// insertOrderData(data:any){
+//   return this.http.post(environment.apiUrl+'/api/addOrder/',data);
+// }
+
+// updateOrderData(id:any,data:any){
+//   return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
+// }
+
+/////////////////////newone/////////////////////////
+insertOrderData(drugs:orderInterface,city:any,id:number) {
+
+  let header = new HttpHeaders({
+    Authorization: localStorage.getItem('token')!
+  })
+ 
+// console.log(userData);
+
+  return this.httpClient.post('http://127.0.0.1:8000/api/storeOrder',{drugs,city,id}, { headers: header });
+
 }
 
-updateOrderData(id:any,data:any){
-  return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
+updateOrderData(id : number, data : any){
+
+  let header = new HttpHeaders({
+    Authorization: localStorage.getItem('token')!
+  })
+
+  return this.httpClient.put('http://127.0.0.1:8000/api/updateOrder/'+id, data, { headers: header });
+
+
+
 }
+
+
 
 
 /////////////////////////////////////////////////////////////////////////
@@ -104,7 +137,7 @@ updateCategoryData(id:any,data:any){
 }
 
 
-
+}
 
 
 
@@ -120,5 +153,5 @@ updateCategoryData(id:any,data:any){
 //   getUserById(id:any){
 //     return this.httpClient.get('http://....../'+id);
 //   }
- }
+ 
 // hnshil el id:any mn getUserById

@@ -12,6 +12,7 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class DetailsComponent implements OnInit {
   data: any;
+  imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   id: any;
    drugs:any;
    //drug= new Drug();

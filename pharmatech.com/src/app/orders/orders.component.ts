@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { DataService } from '../service/data.service';
-import { Order } from '../order';
+import { Order, orderInterface , OrderStatus} from '../order';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -14,7 +14,8 @@ export class OrdersComponent implements OnInit {
   p: number = 1;
   orders:any;
   order= new Order();
-
+id:any;
+status = OrderStatus;
   constructor(private formBuilder:FormBuilder,private dataService:DataService) { }
 
   ngOnInit(): void {
@@ -39,11 +40,27 @@ export class OrdersComponent implements OnInit {
 
    }
 
-   insertOrderData(){
-  this.dataService.insertOrderData(this.order).subscribe(res=>{
-    // this.getDrugsData
-    console.log(res);
+  //  insertOrderData(){
+  // this.dataService.insertOrderData(this.order).subscribe(res=>{
+  //   // this.getDrugsData
+  //   console.log(res);
     
-  })
-   }
+  // })
+  //  }
+
+
+   updateOrderData(id:number, data:orderInterface){
+
+    this.dataService.updateOrderData(id,data).subscribe(res=>{
+      this.getOrdersData();
+    })
+    
+  }
+
+
+
+
+
+
+
 }
