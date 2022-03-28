@@ -39,12 +39,14 @@ export class CartapiService {
     return this.httpClient.get('http://127.0.0.1:8000/api/show/' + id, { headers: header })
   }
 
-  createCart(cartItem: Drug[]) {
+  createCart(id: any ,cartItem: Drug[]) {
 
     let header = new HttpHeaders({
       Authorization: localStorage.getItem('token')!
     })
-    return this.httpClient.post('http://127.0.0.1:8000/api/store/', { cartItem }, { headers: header });
+  
+    
+    return this.httpClient.post('http://127.0.0.1:8000/api/store/', {id, cartItem });
   }
 
   updateCart(id: number, cartItem: Drug[]) {
@@ -70,7 +72,7 @@ export class CartapiService {
     this.userData = jwt_decode(this.token);
     this.id = this.userData.user_id;
     this.getCart(this.id).subscribe((res: any) => {
-// console.log(res);
+console.log(res);
 
       let cartItems: { drugs: Drug[] } = { drugs: [] }
 
@@ -100,7 +102,7 @@ export class CartapiService {
       drug.drug_quantity = 1;
         cartItems.drugs = [];
         cartItems.drugs.push(drug);
-        this.createCart(cartItems.drugs).subscribe((res: any) => {
+        this.createCart(this.id, cartItems.drugs).subscribe((res: any) => {
           this.cartHasBeenChanged.emit(res.drugs);
         });
       }

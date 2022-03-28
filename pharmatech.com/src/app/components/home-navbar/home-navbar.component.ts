@@ -42,7 +42,7 @@ export class HomeNavbarComponent implements OnInit {
         this.drugCount = 0;
 
         this.drugList.forEach((item: any) => {
-          this.drugCount += item.pivot.product_quantity;
+          this.drugCount += item.pivot.drug_quantity;
         });
 
 

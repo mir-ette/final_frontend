@@ -31,6 +31,7 @@ export class HomeDrugComponent implements OnInit {
       Object.assign(a, { quantity: 1, total: a.price })
 
     });
+console.log(this);
 
     this.apiCart.cartHasBeenChanged.subscribe(
       (res) => {

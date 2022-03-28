@@ -17,33 +17,36 @@
  <!-- shopping-cart-area start -->
 
 
-<ng-container *ngIf="drugs.length!=0">
+<ng-container *ngIf="cart.drugs.length">
 
 
     <table class="table">
         <thead>
           <tr>
             <th scope="col">index</th>
-            <th scope="col">name</th>
+            <th scope="col">image</th>
             <th scope="col">price</th>
+            <th scope="col">name</th>
             <th scope="col">quantity</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngfor="let drug of drugs ; let i=index " >
-            <th scope="row">{{i+1}}}</th>
-            <td>{{drug.price}}</td>
+          <tr *ngFor="let drug of cart?.drugs ; let i=index " >
+            <th scope="row">{{i+1}}</th>
+            <td><img src="{{imageDirectoryPath}}{{drug.image}}" alt=""></td>
+            <td>{{drug.price | currency}}</td>
             <td>{{drug.trade_name_en}}</td>
-            <td><button class="btn "><i class="fa fa-pencil"></i></button></td>
+            <td>{{drug.pivot.drug_quantity}}</td>
+            <td><button class="btn " (click)="removeFromCart(drug)"><i class="fa fa-pencil"></i></button></td>
           </tr>
         </tbody>
     </table>
- <button class="btn btn-danger">empty</button> 
+ <button class="btn btn-danger" (click)=" emptycart()">empty</button> 
 
 <button class="btn btn-warning "routerLink="/home/drug">shop more</button>
 
 <button class="btn btn-success">checkout</button>
-<strong>total:${{grandTotal}}</strong>
+<strong>total:{{ totalPrice | currency}}</strong>
 </ng-container> 
  
 
@@ -64,7 +67,7 @@
 
 
 
-<ng-container *ngIf="drugs.length==0">
+<ng-container *ngIf="!cart.drugs.length">
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">my cart</h5>
