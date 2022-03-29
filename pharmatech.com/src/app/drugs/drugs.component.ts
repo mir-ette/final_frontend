@@ -20,7 +20,7 @@ import {AbstractControl, ValidatorFn} from '@angular/forms';
   form!: FormGroup;
   submitted = false;
   data:any;
-  
+  imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   drugs:any;
   drug= new Drug();
   

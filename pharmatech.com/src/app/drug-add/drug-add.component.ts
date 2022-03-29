@@ -31,7 +31,7 @@ export class DrugAddComponent implements OnInit {
 
   insertDrugssData(){
     this.dataService.insertData(this.drug).subscribe(res=>{
-       this.data=res
+      //  this.data=res
       console.log(res);
     })
      this.router.navigate(['/drugs']);

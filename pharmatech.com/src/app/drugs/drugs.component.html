@@ -9,8 +9,8 @@
 
   <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
     <h1 style="padding:30px">DRUGS</h1>
-    <div style="padding-left:90%;">
-      <button type="button" class=" btn btn-warning" routerLink="/drugs/add" >add drug</button></div>
+    <div style="padding-left:800px;">
+      <button type="button" class=" btn btn-warning" routerLink="/drugs/add"  >add drug</button></div>
     <table class="table table-hover my-0" >
         <thead>
             <tr>
@@ -28,12 +28,13 @@
         </thead>
         <tbody>
             <tr *ngFor="let drug of drugs | paginate: { itemsPerPage: 5, currentPage: p }">
-              <!-- <td class="d-none d-md-table-cell"><img src="{{drug.image}}"></td> -->
-              <td class="d-none d-md-table-cell">{{drug.image}}</td>
+              <td class="d-none d-md-table-cell"><img src="{{imageDirectoryPath}}{{drug.image}}" alt=""></td>
+
+              <!-- <td class="d-none d-md-table-cell">{{drug.image}}</td> -->
               <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
                 <td>{{drug.trade_name_ar}}</td>
                
-                <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
+                <td class="d-none d-xl-table-cell">{{drug.price}}</td>
                 
                 <td class="d-none d-xl-table-cell">{{drug.description}}</td>
                

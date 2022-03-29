@@ -1,0 +1,9 @@
+img{
+    position: relative;
+    animation: mymove 50s infinite;
+    animation-timing-function: linear;
+}
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 1050px;}
+  }
