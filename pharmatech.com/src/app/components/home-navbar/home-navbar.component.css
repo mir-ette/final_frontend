@@ -21,3 +21,13 @@
   */ .topnav .icon {
     display: none;
   }  
+  #no{
+    width:100px
+  }
+  #logo{
+     transform :rotate(180deg) infinte
+  }
+  /* #logo:hover{ transform: scale(1.2);
+    opacity: 0;
+
+  } */

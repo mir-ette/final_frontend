@@ -46,6 +46,7 @@ import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DrugItemComponent } from './components/drug-item/drug-item.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 const appRoutes: Routes = [
  // {
   //  path: '',
@@ -102,6 +103,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent, canActivateChild: [ChildenGuardGuard]},//ask
   { path: 'profile', component: ProfileAdminComponent,canActivate: [AuthGuardGuard], },
   { path: 'profile/edit/:id', component: EditAdminComponent,canActivate: [AuthGuardGuard], },
+  {path:'**',component:  NotFoundPageComponent}
 
 ]
 
@@ -166,6 +168,7 @@ const appRoutes: Routes = [
     NewDashboardComponent,
     DetailsComponent,
     DrugItemComponent,
+    NotFoundPageComponent,
     
     
   ],

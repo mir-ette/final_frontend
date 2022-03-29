@@ -13,7 +13,7 @@
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="logo">
                         <a href="index.html">
-                            <img alt="" src="assets/.assets/img/logo/logo.png">
+                            <img id="logo" alt="" src="assets/.assets/img/logo/logo.png">
                         </a>
                     </div>
                 </div>
@@ -66,24 +66,27 @@
                             <a href="#">
                                 <div class="cart-icon">
                                     <i class="ti-shopping-cart"></i>
+                                    <div class="badge bg-danger">{{drugCount}}</div>
                                 </div>
                             </a>
                             <div class="shopping-cart-content">
                                 <ul>
-                                    <li class="single-shopping-cart">
+                                    <li class="single-shopping-cart"*ngFor="let drug of cart?.drugs ;"  >
                                         <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/.assets/img/cart/cart-1.jpg"></a>
+                                            <a href="#" ><img id="no" src="{{imageDirectoryPath}}{{drug.image}}" alt=""></a>
                                         </div>
                                         <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote </a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
+                                            <h4><a href="#">{{drug.trade_name_en}} </a></h4>
+                                            <h6>Qty:{{drug.pivot.drug_quantity}}</h6>
+                                            <span>{{drug.price | currency}}</span>
                                         </div>
                                         <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
+                                          
+                                          <button  (click)="removeFromCart(drug)"><i class="ion ion-close"></i></button>
                                         </div>
+                                        
                                     </li>
-                                    <li class="single-shopping-cart">
+                                    <!-- <li class="single-shopping-cart">
                                         <div class="shopping-cart-img">
                                             <a href="#"><img alt="" src="assets/.assets/img/cart/cart-2.jpg"></a>
                                         </div>
@@ -95,15 +98,19 @@
                                         <div class="shopping-cart-delete">
                                             <a href="#"><i class="ion ion-close"></i></a>
                                         </div>
-                                    </li>
+                                    </li> -->
+                                
+                                
+                                
                                 </ul>
-                                <div class="shopping-cart-total">
-                                    <h4>Shipping : <span>$20.00</span></h4>
-                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
+
+                                <div class="shopping-cart-total" >
+                                    
+                                    <h4>Total : <span class="shop-total">{{ totalPrice | currency}}</span></h4>
                                 </div>
                                 <div class="shopping-cart-btn">
-                                    <a href="cart-page.html">view cart</a>
-                                    <a href="checkout.html">checkout</a>
+                                    <a routerLink="/home/cart">view cart</a>
+                                    <button  (click)=" emptycart()">REMOVE ALL</button>
                                 </div>
                             </div>
                         </div>
