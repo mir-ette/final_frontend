@@ -30,7 +30,13 @@ export class DrugAddComponent implements OnInit {
   
 
   insertDrugssData(){
-    this.dataService.insertData(this.drug).subscribe(res=>{
+    // console.log("test");
+    // //console.log(this.drug);
+   const myObjStr=JSON.stringify(this.drug);
+   console.log(myObjStr);
+   
+     this.dataService.insertData(myObjStr).subscribe(res=>{
+    // this.dataService.insertData(this.drug).subscribe(res=>{
       //  this.data=res
       console.log(res);
     })

@@ -11,7 +11,7 @@
   <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
     <!-- <h1 style="padding:30px">DRUGS</h1> -->
     <div class="container"style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin:2rem; padding-left:1 rem">
-<form (ngSubmit)=" insertDrugssData()" >
+<form (ngSubmit)=" insertDrugssData()" enctype="multipart/form-data" >
     <div class="form-group">
       <label for=" image"> image</label>
       <input type="file" class="form-control" name=" image" [(ngModel)]="drug.image">
