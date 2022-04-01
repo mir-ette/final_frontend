@@ -25,13 +25,34 @@
      <link rel="stylesheet" href="assets/.assets/css/meanmenu.min.css">
     <link rel="stylesheet" href="assets/.assets/css/style.css">
     <link rel="stylesheet" href="assets/.assets/css/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-
-
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"> 
   </head>
+<style>
+  #scrollltop{
+
+font-size: 35px;
+    position: fixed;
+    bottom: 50px;
+    right:50px;
+    height: 60px;
+    width: 60;
+    border-radius: 5px;
+    position: fixed;
+    color: rgb(40, 40, 94);
+    display: none ;
+  }
+  /* .scrollUp.active{
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(-55px);
+  } */
+</style>
 <body>
+  <a id="scrollltop" > <i class="fa-solid fa-capsules"></i></a>
   <app-root></app-root>
+<!-- <button id="scrollltop"><i class="fa-solid fa-capsules"></i></button> -->
+  
    <!--	all js here --> 
      <script src="assets/.assets/js/vendor/jquery-1.12.0.min.js"></script>
     <script src="assets/.assets/js/popper.js"></script>
@@ -42,11 +63,11 @@
     <!-- <script src="assets/.assets/js/owl.carousel.min.js"></script> -->
     <script src="assets/.assets/js/plugins.js"></script>
     <script src="assets/.assets/js/main.js"></script>
-    <script>
+    <!-- <script>
       $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
       });
-      </script>
+      </script> -->
       <script> 
      function myFunction() {
       var x = document.getElementById("myTopnav");
@@ -56,6 +77,21 @@
         x.className = "topnav";
       }
     }
+</script>
+<script>
+$(document).ready(function(){
+  $(window).scroll(function()
+  {
+    if($(this).scrollTop()>100){
+      $('#scrollltop').fadeIn();
+    }else{ $('#scrollltop').fadeOut();
+     
+    }
+  })
+  $('#scrollltop').click(function(){
+  $('html ,body').animate({scrollTop:0},500)
+});
+});
 </script>
 
 </body>
