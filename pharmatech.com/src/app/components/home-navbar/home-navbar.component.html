@@ -4,7 +4,6 @@
         cursor: pointer;
         color: darkblue;
     }
-    
 </style>
 <header class="header-area gray-bg clearfix" class="topnav" id="myTopnav">
     <div class="header-bottom">
@@ -22,7 +21,8 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover"><a routerLink="/home" data-toggle="tooltip" data-placement="home" title="tmm!">home</a></li>
+                                    <li class="top-hover"><a routerLink="/home" data-toggle="tooltip"
+                                            data-placement="home" title="tmm!">home</a></li>
                                     <li><a routerLink="/about">about</a></li>
                                     <!-- <li class="top-hover"><a >Drug</a> -->
                                     <!-- <ul class="submenu"> -->
@@ -53,67 +53,14 @@
                                     </li>
                                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                         <i class="fa fa-bars"></i>
-                                      </a>
+                                    </a>
                                     <!-- <li><a href="">logout</a></li> -->
                                 </ul>
                             </nav>
 
                         </div>
-                        <div class="header-currency">
-
-                        </div>
-                        <div class="header-cart">
-                            <a href="#">
-                                <div class="cart-icon">
-                                    <i class="ti-shopping-cart"></i>
-                                    <div class="badge bg-danger">{{drugCount}}</div>
-                                </div>
-                            </a>
-                            <div class="shopping-cart-content">
-                                <ul>
-                                    <li class="single-shopping-cart"*ngFor="let drug of cart?.drugs ;"  >
-                                        <div class="shopping-cart-img">
-                                            <a href="#" ><img id="no" src="{{imageDirectoryPath}}{{drug.image}}" alt=""></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="#">{{drug.trade_name_en}} </a></h4>
-                                            <h6>Qty:{{drug.pivot.drug_quantity}}</h6>
-                                            <span>{{drug.price | currency}}</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                          
-                                          <button  (click)="removeFromCart(drug)"><i class="ion ion-close"></i></button>
-                                        </div>
-                                        
-                                    </li>
-                                    <!-- <li class="single-shopping-cart">
-                                        <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/.assets/img/cart/cart-2.jpg"></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote</a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
-                                        </div>
-                                    </li> -->
-                                
-                                
-                                
-                                </ul>
-
-                                <div class="shopping-cart-total" >
-                                    
-                                    <h4>Total : <span class="shop-total">{{ totalPrice | currency}}</span></h4>
-                                </div>
-                                <div class="shopping-cart-btn">
-                                    <a routerLink="/home/cart">view cart</a>
-                                    <button  (click)=" emptycart()">REMOVE ALL</button>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -143,7 +90,7 @@
                                     <li><a href="contact.html">contact</a></li>
                                 </ul>
                             </li>
-                           
+
                         </ul>
                     </nav>
                 </div>

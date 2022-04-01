@@ -12,13 +12,27 @@ export class DrugAddComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
   data:any;
-  
+  categories: any;
   drugs:any;
+  file: any;
+  image: any;
   drug= new Drug();
   constructor(private formBuilder:FormBuilder,private dataService:DataService,private router:Router) { }
+  createForm(){
+    this.form = this.formBuilder.group({
+      trade_name_en:['' , [Validators.required , Validators.minLength(3)]],
+      description:['' , [Validators.required , Validators.minLength(15)]],
+      price:['' , [Validators.required]],
+      trade_name_ar:['' , [Validators.required , Validators.minLength(3)]],
+      category_id:['' , [Validators.required ]],
+      image:[null, [Validators.required ]],
+    });
+  }
 
   ngOnInit(): void {
     this.getDRUGSData()
+    this.getCategories()
+    this.createForm()
   }
 
   getDRUGSData(){
@@ -28,10 +42,30 @@ export class DrugAddComponent implements OnInit {
   
    }
   
+   getCategories() {
+     this.dataService.getCategoriesData().subscribe(res => {
+       this.categories = res
+     })
+   }
+
+   uploadImage(event: any){
+     if (event.target.files.length > 0) {
+       this.file = event.target.files[0];
+       this.form.get('image')?.setValue(this.file);
+     }
+   }
 
   insertDrugssData(){
-    this.dataService.insertData(this.drug).subscribe(res=>{
-      //  this.data=res
+    const formData = new FormData();
+    formData.append('trade_name_en', this.form.get('trade_name_en')?.value)
+    formData.append('trade_name_ar', this.form.get('trade_name_ar')?.value)
+    formData.append('price', this.form.get('price')?.value)
+    formData.append('description', this.form.get('description')?.value)
+    formData.append('category_id', this.form.get('category_id')?.value)
+    formData.append('image', this.form.get('image')?.value)
+
+    this.dataService.insertData(formData).subscribe(res=>{
+       this.data=res
       console.log(res);
     })
      this.router.navigate(['/drugs']);

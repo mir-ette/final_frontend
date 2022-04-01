@@ -1,74 +1,115 @@
 <app-navbar></app-navbar>
 
- <div class="row "> 
-    <div class="col-auto col-md-3 col-xl-2   ">
-        
-       
-  <app-sidebar></app-sidebar>
-</div>
+<div class="row ">
+  <div class="col-auto col-md-3 col-xl-2   ">
 
-  <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
-    <h1 style="padding:30px">profile</h1> <!-- ask -->  
+
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;">
+    <h1 style="padding:30px">profile</h1> <!-- ask -->
     <div style="padding-left:90%;">
-      <button type="button" class=" btn btn-warning" routerLink="/drugs/add" >add admin</button></div> <!-- ask -->
-    
-      <div class="container"style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin:2rem; padding-left:1 rem">
-      <form (ngSubmit)="updateUserData()">
-          <div class="form-group">
-              <label for=" name"> name</label>
-              <input type="text" class="form-control" name=" name" [(ngModel)]="user.name">
-            </div>
-            
-            <div class="form-group">
-              <label for=" email"> email</label>
-              <input type="email" class="form-control" name=" email" [(ngModel)]="user.email">
-            </div>
-            <!-- <div class="form-group">
-              <label for="password"> password</label>
-              <input type="password" class="form-control" name=" password" [(ngModel)]="user.password">
-            </div>  -->
-            <div class="form-group">
-              <label for=" city"> city</label>
-              <input type="text" class="form-control" name=" city" [(ngModel)]="user.city">
-            </div>
-            <div class="form-group">
-              <label for=" street"> street</label>
-              <input type="text" class="form-control" name=" street" [(ngModel)]="user.street">
-            </div>
-            
-          
-           <button  type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button> <br> 
-          
-          </form>
-      </div>
-    
-      <table class="table table-hover my-0">
-        <thead>
-            <tr>
-                <th> user_name</th>
-                <th class="d-none d-xl-table-cell">email</th>
-                <th class="d-none d-xl-table-cell">password</th>
-              
-                <th class="d-none d-md-table-cell">city</th>
-                <th class="d-none d-md-table-cell">street</th>
-                <th>action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: p }">
-                <td>{{user.name}}</td>
-                <td class="d-none d-xl-table-cell">{{user.email}}</td>
-                <td class="d-none d-xl-table-cell">{{user.password}}</td>
-                
-                <td class="d-none d-xl-table-cell">{{user.city}}</td>
-                <td class="d-none d-md-table-cell">{{user.street}}</td>
-                 <td class="d-none d-md-table-cell"><button class="btn-danger" (click)="deleteUserData(user.id)"><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning" routerLink="/edit/{{user.id}}"><i class="fa-solid fa-pen"></i></button></td> 
-            </tr>
-           
      
-        </tbody>
-    </table>
-    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
- 
+    </div> <!-- ask -->
+
+    <div class="container"
+      style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin:2rem; padding-left:1 rem">
+      <form (ngSubmit)="updateUserrData()" [formGroup]="form" method="post">
+        <div class="form-group">
+          <label for=" name"> name</label>
+
+          <input type="text" class="form-control" formControlName="name" name="name"
+            [ngClass]="{'is-invalid': submitted &&f['name'].errors}" required />
+
+          <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']">
+              name is required
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+          <label for=" email"> email</label>
+          <input type="email" name="email" formControlName="email" class="form-control"
+          [ngClass]="{'is-invalid': submitted && f['email'].errors}" required />
+
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                      <div *ngIf="f['email'].errors['required']">
+                        email is required
+                      </div>
+
+
+                      <div *ngIf="f['email'].errors['email']">
+                        email must be valid
+                      </div>
+
+                    </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label>Password</label>
+
+      <input type="password" name="password" formControlName="password" class="form-control"
+                      [ngClass]="{'is-invalid': submitted &&f['password'].errors}" required />
+
+                <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                      <div *ngIf="f['password'].errors['required']">
+                        password is required
+                      </div>
+
+
+                      <div *ngIf="f['password'].errors['minlength']">
+                        email must be more than 6 letter
+                      </div>
+
+                    </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+          <label for=" city"> city</label>
+          
+          <input type="text" class="form-control" formControlName="city" name="city"
+          [ngClass]="{'is-invalid': submitted && f['city'].errors}" required />
+
+          
+            <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+              <div *ngIf="f['city'].errors['required']">
+                city is required
+              </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for=" street"> street</label>
+          <input type="text" class="form-control" formControlName="street" name="street"
+          [ngClass]="{'is-invalid': submitted && f['street'].errors}" required />
+
+     
+                    <div *ngIf="submitted && f['street'].errors" class="invalid-feedback">
+                      <div *ngIf="f['street'].errors['required']">
+                        street is required
+                      </div>
+
+                    </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button> <br>
+
+      </form>
+    </div>
+
+
+  </div>
 </div>
-</div>    
