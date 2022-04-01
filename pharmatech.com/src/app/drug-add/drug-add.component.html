@@ -19,31 +19,31 @@
         </div>
         <div class="form-group">
           <label for=" trade_name_en"> trade_name_en</label>
-          <input type="text" class="form-control" name=" trade_name_en" [(ngModel)]="drug.trade_name_en">
+          <input type="text" class="form-control" formControlName="trade_name_en" name="trade_name_en" [(ngModel)]="drug.trade_name_en">
         </div>
         <div class="form-group">
           <label for=" trade_name_ar"> trade_name_ar</label>
-          <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
+          <input type="text" class="form-control" formControlName="trade_name_ar" name="trade_name_ar" [(ngModel)]="drug.trade_name_ar">
         </div>
 
 
         <div class="form-group">
           <label for="price"> price</label>
-          <input type="number" class="form-control" name=" price" [(ngModel)]="drug.price">
+          <input type="number" class="form-control" formControlName="price" name="price" [(ngModel)]="drug.price">
         </div>
         <div class="form-group">
           <label for="  description"> description</label>
-          <input type="text" class="form-control" name="  description" [(ngModel)]="drug. description">
+          <input type="text" class="form-control" formControlName="description" name="description" [(ngModel)]="drug. description">
         </div>
 
         <div class="form-group">
-          <label for=" production_date"> production_date</label>
-          <input type="date" class="form-control" name=" production_date" [(ngModel)]="drug.production_date">
+          <label for="production_date"> production_date</label>
+          <input type="date" class="form-control" formControlName="production_date" name="production_date" [(ngModel)]="drug.production_date">
         </div>
 
         <div class="form-group">
-          <label for=" expiry_date"> expiry_date</label>
-          <input type="date" class="form-control" name=" expiry_date" [(ngModel)]="drug.expiry_date">
+          <label for="expiry_date"> expiry_date</label>
+          <input type="date" class="form-control" formControlName="expiry_date" name="expiry_date" [(ngModel)]="drug.expiry_date">
         </div>
         <div class="form-group">
           <label for=" category"> category</label>
