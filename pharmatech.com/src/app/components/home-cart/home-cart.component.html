@@ -18,8 +18,11 @@
 
 
 <ng-container *ngIf="cart?.drugs?.length">
-
-
+<div id="empty">
+    <button class="btn btn-danger"  id="
+    emptybtn"
+   (click)=" emptycart()">empty cart</button>
+</div>
     <table class="table">
         <thead>
             <tr>
@@ -38,17 +41,23 @@
                 <td>{{drug.price | currency}}</td>
                 <td>{{drug.trade_name_en}}</td>
                 <td>{{drug.pivot.drug_quantity}}</td>
-                <td><button class="btn " (click)="removeFromCart(drug)"><i class="fa fa-trash"></i></button></td>
+                <td><button class="btn " (click)="removeFromCart(drug)"><i class="fa fa-trash" style="color:red"></i></button></td>
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-danger" (click)=" emptycart()">empty</button>
+   <div id="shop">
 
-    <button class="btn btn-warning " routerLink="/home/drug">shop more</button>
-<div  id="test" >
-    <button class="btn btn-success" (click)="insertOrderData()">checkout</button>
+    <i  id="arrow" class="fa-solid fa-arrow-right-long"></i>  <a  id="shopmore" class="alert-link"  href='' routerLink="/home/drug"> <strong>shop more</strong> </a>
 </div>
-    <strong>total:{{ totalPrice | currency}}</strong>
+    <div  id="test" >
+        <div id="circle">    <p id="total">total:{{ totalPrice | currency}}</p> </div>
+        <div id="check">
+    <button  
+    class="btn btn-dark" (click)="insertOrderData()">checkout</button> </div> <br>  
+   
+ 
+</div>
+   
 </ng-container>
 
 <ng-container *ngIf="!cart?.drugs?.length">

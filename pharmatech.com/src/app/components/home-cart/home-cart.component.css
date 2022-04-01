@@ -92,5 +92,43 @@ img {
    }  
 #test{
   padding-left: 85%;
+padding-bottom: 20px;
+}
+#empty{
+  padding-left: 92%;
+margin: 10px;
+  border-radius:20px;
+}
+#emptybtn:hover{
+ background-color: green;
+}
+#arrow{
+  margin: 10px;
+}
+#shop{
+  margin: 10px;
+  font-size: 30px;
+  font-family: cursive;
+/* position: absolute; */
+
+}
+  #shopmore:hover{
+    background: yellow;
+    text-decoration: underline;
+/* 
+   position: fixed; */
+  }
+  #circle {
+    width: 100px;
+    height: 100px;
+    background:transparent;
+    border-radius: 50%;
+    border:1px solid red;   
+  }
+#total{
+  padding-top: 45px;
+  text-align: center;}
+#check{
+ padding-bottom: 100px;
 
 }
