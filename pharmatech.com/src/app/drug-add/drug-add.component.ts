@@ -26,6 +26,8 @@ export class DrugAddComponent implements OnInit {
       trade_name_ar:['' , [Validators.required , Validators.minLength(3)]],
       category_id:['' , [Validators.required ]],
       image:[null, [Validators.required ]],
+      expiry_date:[null, [Validators.required ]],
+      production_date:[null, [Validators.required ]],
     });
   }
 
@@ -63,7 +65,10 @@ export class DrugAddComponent implements OnInit {
     formData.append('description', this.form.get('description')?.value)
     formData.append('category_id', this.form.get('category_id')?.value)
     formData.append('image', this.form.get('image')?.value)
+    formData.append('expiry_date', this.form.get('expiry_date')?.value)
 
+formData.append('production_date', this.form.get('production_date')?.value)
+    
     this.dataService.insertData(formData).subscribe(res=>{
        this.data=res
       console.log(res);
