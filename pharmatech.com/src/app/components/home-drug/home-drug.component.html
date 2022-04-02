@@ -2,230 +2,27 @@
 <app-home-navbar></app-home-navbar>
 <div class="search-hero" style="width: 250px; padding-left: 50px;"><i class="fa-solid fa-microscope"></i>
   <input class="form-control mr-sm-2" type="text" name="search"  [(ngModel)]="searchText" placeholder="search by " >
-   <!-- <ul>
-       <li *ngFor="let drug of drugs" >
-        <input type="checkbox" (change)="filterDrugs($event)"[id]="drug.id" > {{drug.trade_name_en}}
-       </li>
-   </ul>
-   <button class="btn btn-primary"(click)="getFilterData()" >apply filter</button>
-   <div class="card" *ngFor="let drugs of filter_data">
-<div class="card-body">{{drugs.trade_name_en}}</div>
-   </div> -->
+   
 </div>
 
 
 <div class="row">
-    <!-- <div class="col-4" *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p } "> -->
+  
         <app-drug-item class="col-4"  *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p }" [drugItem] ="drug"></app-drug-item>
    
-        <!-- <div class="card" style="width: 18rem; padding: 20px; margin: 1rem;"  >
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">name:{{drug.trade_name_en}}</h5>
-              
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"> price:{{drug.price}}</li>
-              <! <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li> -->
-            <!-- </ul> -->
-            <!-- <div class="card-body">
-              <a routerLink="/home/details/{{drug.id}}" class="card-link">see datails</a>
-              <button (click)="addtoCart( )" class="btn">add to cart</button>
-            </div> -->
-          <!-- </div> --> 
-    <!-- </div> -->
-    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+   
+    <div class="row">
+        <div class="col-6">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls></div>
+    <div class="col-6" id="cart">
+     <a  id="link" href="" routerLink="/home/cart">G O   T O <span><i class="fa-solid fa-cart-shopping" ></i></span></a></div>
+</div>
 </div>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- Product Area Start -->
-<!-- <div class="product-area bg-image-1 pt-90 pb-95">
-    <div class="container">
-        <div class="product-top-bar style-two section-border mb-55">
-            <div class="section-title-wrap text-center">
-                <h3 class="section-title">Diabetes treatment</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt
-                </p>
-            </div>
-        </div>
-        <div class="featured-product-active hot-flower owl-carousel product-nav">
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="product-details.html">
-                        <img alt="" src="assets/pexels-polina-tankilevitch-3873149.jpg">
-                    </a>
-                    <div class="product-action">
-
-                        <a class="action-cart" href="#" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                        </a>
-                        <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                            title="Quick View">
-                            <i class="ion-ios-search-strong"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="product-content text-left">
-                    <div class="product-hover-style">
-                        <div class="product-title">
-                            <h4>
-                                <a href="product-details.html">Nature Close Tea</a>
-                            </h4>
-                        </div>
-                        <div class="cart-hover">
-                            <h4><a href="product-details.html">+ Add to cart</a></h4>
-                        </div>
-                    </div>
-                    <div class="product-price-wrapper">
-                        <span>$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="product-details.html">
-                        <img alt="" src="assets/.assets/img/product/product-1.jpg">
-                    </a>
-                    <div class="product-action">
-
-                        <a class="action-cart" href="#" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                        </a>
-                        <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                            title="Quick View">
-                            <i class="ion-ios-search-strong"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="product-content text-left">
-                    <div class="product-hover-style">
-                        <div class="product-title">
-                            <h4>
-                                <a href="product-details.html">Nature Close Tea</a>
-                            </h4>
-                        </div>
-                        <div class="cart-hover">
-                            <h4><a href="product-details.html">+ Add to cart</a></h4>
-                        </div>
-                    </div>
-                    <div class="product-price-wrapper">
-                        <span>$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="product-details.html">
-                        <img alt="" src="assets/.assets/img/product/product-1.jpg">
-                    </a>
-                    <div class="product-action">
-
-                        <a class="action-cart" href="#" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                        </a>
-                        <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                            title="Quick View">
-                            <i class="ion-ios-search-strong"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="product-content text-left">
-                    <div class="product-hover-style">
-                        <div class="product-title">
-                            <h4>
-                                <a href="product-details.html">Nature Close Tea</a>
-                            </h4>
-                        </div>
-                        <div class="cart-hover">
-                            <h4><a href="product-details.html">+ Add to cart</a></h4>
-                        </div>
-                    </div>
-                    <div class="product-price-wrapper">
-                        <span>$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="product-details.html">
-                        <img alt="" src="assets/.assets/img/product/product-1.jpg">
-                    </a>
-                    <div class="product-action">
-
-                        <a class="action-cart" href="#" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                        </a>
-                        <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                            title="Quick View">
-                            <i class="ion-ios-search-strong"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="product-content text-left">
-                    <div class="product-hover-style">
-                        <div class="product-title">
-                            <h4>
-                                <a href="product-details.html">Nature Close Tea</a>
-                            </h4>
-                        </div>
-                        <div class="cart-hover">
-                            <h4><a href="product-details.html">+ Add to cart</a></h4>
-                        </div>
-                    </div>
-                    <div class="product-price-wrapper">
-                        <span>$100.00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="product-wrapper">
-                <div class="product-img">
-                    <a href="product-details.html">
-                        <img alt="" src="assets/.assets/img/product/product-1.jpg">
-                    </a>
-                    <div class="product-action">
-
-                        <a class="action-cart" href="#" title="Add To Cart">
-                            <i class="ion-ios-shuffle-strong"></i>
-                        </a>
-                        <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                            title="Quick View">
-                            <i class="ion-ios-search-strong"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="product-content text-left">
-                    <div class="product-hover-style">
-                        <div class="product-title">
-                            <h4>
-                                <a href="product-details.html">Nature Close Tea</a>
-                            </h4>
-                        </div>
-                        <div class="cart-hover">
-                            <h4><a href="product-details.html">+ Add to cart</a></h4>
-                        </div>
-                    </div>
-                    <div class="product-price-wrapper">
-                        <span>$100.00</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <!-- Footer style Start -->
 <footer class="footer-area pt-75 gray-bg-3">

@@ -1,0 +1,16 @@
+#link{
+    font-size: 20px;
+    color: blue;
+}
+#link span :hover{
+    color: blue;
+}
+#link :hover{
+    color: blue !important;
+
+}
+#cart :hover{
+
+text-decoration: underline;
+
+}

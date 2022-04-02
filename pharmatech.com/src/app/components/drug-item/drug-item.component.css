@@ -86,3 +86,9 @@
   display: block;
   margin-top: 5px;
    }  
+  .card-link :hover{
+background-color: azure;
+   }
+#cart :hover{
+  background-color: yellow;
+}
