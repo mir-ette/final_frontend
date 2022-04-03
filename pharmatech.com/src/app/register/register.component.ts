@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
       this.form.get('street')?.reset();
       // this.form.get('role')?.reset();
     });
-
+    this.router.navigate(['/home'])
   }
   insertUserData() {
     this.dataService.insertUserData(this.user).subscribe(res => {
