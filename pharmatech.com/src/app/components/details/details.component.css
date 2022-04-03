@@ -37,7 +37,7 @@
      position: absolute;
      width: 150px;
      height: 100%;
-     background: linear-gradient(#dE685E, #EE786E);
+     background: linear-gradient(#050422, #EE786E);
      transition: width 0.4s;
      overflow: hidden;
      z-index: 2;
@@ -187,4 +187,12 @@
    }
  .img{
      width: 20px;
+ }
+ #mm{
+  background-color: transparent;
+  border: 0em;
+ }
+ #mm:hover{
+   color:red;
+   font-size: 30px;
  }

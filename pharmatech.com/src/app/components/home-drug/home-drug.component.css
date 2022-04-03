@@ -5,12 +5,13 @@
 #link span :hover{
     color: blue;
 }
-#link :hover{
+#link:hover{
     color: blue !important;
-
+    font-size: 30px;
 }
-#cart :hover{
+#cart:hover{
 
 text-decoration: underline;
+font-size: 20px;
 
 }

@@ -7,9 +7,13 @@
       <div class="details">
           <h2>name:<br><span>{{drugItem.trade_name_en}}</span></h2>
            <h2>price:<br><span>{{drugItem.price}}</span></h2>
+          
             <a id="details" routerLink="/home/details/{{drugItem.id}}" class="card-link">see datails</a>
       <button  id='cart' (click)="addtoCart( )" class="btn">add to cart</button>
+<!--      
+      <p>{{drugItem.category_id}}</p> -->
+ 
       </div>
     </div>
   
-    
+   

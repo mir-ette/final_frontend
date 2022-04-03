@@ -23,6 +23,7 @@ export class HomeDrugComponent implements OnInit {
   searchText = '';
   selected_categories:any=[];
   filter_data:any;
+  categories: any;
   constructor(private dataService: DataService, private router: Router, private apiCart: CartapiService) { }
 
   ngOnInit(): void {
@@ -43,7 +44,7 @@ console.log(this);
 
     this.drugItem;
 
-
+    this.getCategories()
 
   }
 
@@ -112,7 +113,11 @@ filterDrugs(event: any){
 }
 
 
-
+getCategories() {
+  this.dataService.getCategoriesData().subscribe(res => {
+    this.categories = res
+  })
+}
   
 
 

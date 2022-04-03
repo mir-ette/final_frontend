@@ -1,7 +1,7 @@
 import { Drug } from 'src/app/drug';
 import { Component, OnInit, Input } from '@angular/core';
 import { CartapiService } from 'src/app/service/cartapi.service';
-
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-drug-item',
@@ -14,12 +14,12 @@ export class DrugItemComponent implements OnInit {
   userData: any;
   id: any;
   drugList: Drug[] = [];
-
+  categories: any;
  
 
   imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
 
-  constructor( private apiCart:CartapiService) { }
+  constructor( private apiCart:CartapiService,private dataService:DataService) { }
 
   ngOnInit(): void {
     this. apiCart.cartHasBeenChanged.subscribe(
@@ -32,7 +32,7 @@ export class DrugItemComponent implements OnInit {
 
 
 console.log(this.token);
-
+this.getCategories()
 
 
   }
@@ -47,4 +47,11 @@ console.log(this.token);
 
 
   }
+  getCategories() {
+    this.dataService.getCategoriesData().subscribe(res => {
+      this.categories = res
+    })
+  }
+
+
 }
