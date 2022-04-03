@@ -101,7 +101,7 @@ const appRoutes: Routes = [
 
   { path: 'register', component: RegisterComponent, },
   { path: 'login', component: LoginComponent, canActivateChild: [ChildenGuardGuard]},//ask
-  { path: 'profile', component: ProfileAdminComponent,canActivate: [AuthGuardGuard], },
+  { path: 'profile/:id', component: ProfileAdminComponent,canActivate: [AuthGuardGuard], },
   { path: 'profile/edit/:id', component: EditAdminComponent,canActivate: [AuthGuardGuard], },
   {path:'**',component:  NotFoundPageComponent}
 

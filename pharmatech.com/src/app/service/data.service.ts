@@ -60,8 +60,11 @@ getUsersData(){
 deleteUserData(id:any){
   return this.http.delete(environment.apiUrl+'/api/deleteUser/'+id);
 }
-getUserById(id:any){
-  return this.http.get(environment.apiUrl+'/api/users/'+id);
+getUserById(id:number){
+  let header = new HttpHeaders({
+    Authorization: localStorage.getItem('token')!
+  })
+  return this.http.get(environment.apiUrl+'/api/users/'+id ,{headers:header});
 }
 insertUserData(data:any){
   return this.http.post(environment.apiUrl+'/api/addUser/',data);

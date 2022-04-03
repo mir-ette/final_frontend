@@ -5,5 +5,5 @@ export class User {
     city:any;
     street:any;
     // role:any
+    id:any;
 }
-// eh elklam blnsba ll password

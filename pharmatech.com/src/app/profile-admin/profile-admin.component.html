@@ -20,7 +20,7 @@
           <label for=" name"> name</label>
 
           <input type="text" class="form-control" formControlName="name" name="name"
-            [ngClass]="{'is-invalid': submitted &&f['name'].errors}" required />
+            [ngClass]="{'is-invalid': submitted &&f['name'].errors}"   [(ngModel)]="user.name"   required />
 
           <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
             <div *ngIf="f['name'].errors['required']">
@@ -36,7 +36,7 @@
         <div class="form-group">
           <label for=" email"> email</label>
           <input type="email" name="email" formControlName="email" class="form-control"
-          [ngClass]="{'is-invalid': submitted && f['email'].errors}" required />
+          [ngClass]="{'is-invalid': submitted && f['email'].errors}" [(ngModel)]="user.email"  required />
 
             <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
                       <div *ngIf="f['email'].errors['required']">
@@ -57,7 +57,7 @@
           <label>Password</label>
 
       <input type="password" name="password" formControlName="password" class="form-control"
-                      [ngClass]="{'is-invalid': submitted &&f['password'].errors}" required />
+                      [ngClass]="{'is-invalid': submitted &&f['password'].errors}"  [(ngModel)]="user.password"  required />
 
                 <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                       <div *ngIf="f['password'].errors['required']">
@@ -79,7 +79,7 @@
           <label for=" city"> city</label>
           
           <input type="text" class="form-control" formControlName="city" name="city"
-          [ngClass]="{'is-invalid': submitted && f['city'].errors}" required />
+          [ngClass]="{'is-invalid': submitted && f['city'].errors}"  [(ngModel)]="user.city"  required />
 
           
             <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
@@ -93,7 +93,7 @@
         <div class="form-group">
           <label for=" street"> street</label>
           <input type="text" class="form-control" formControlName="street" name="street"
-          [ngClass]="{'is-invalid': submitted && f['street'].errors}" required />
+          [ngClass]="{'is-invalid': submitted && f['street'].errors}"  [(ngModel)]="user.street"  required />
 
      
                     <div *ngIf="submitted && f['street'].errors" class="invalid-feedback">
