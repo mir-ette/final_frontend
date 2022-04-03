@@ -13,10 +13,7 @@
 <div class="container"style="background-image: url('/assets/pexels-polina-tankilevitch-3873149.jpg'); margin:2rem; padding-left:1 rem ; padding_bottom: 1000px; " ><form (ngSubmit)="updateDrug()" method="post"   [formGroup]="form">
    
   <div class="form-group" style=" background-color: transparent;">
-    <div class="form-group">
-      <label for=" image"> image</label>
-      <input type="file" class="form-control" (change)="uploadImage($event)" name="image" formControlName="image">
-    </div>
+   
 
     <div class="form-group">
       <label for=" trade_name_en"> trade_name_en</label>
@@ -39,22 +36,8 @@
       <input type="text" class="form-control" name="  description"  formControlName="description" [(ngModel)]="drug. description">
     </div>
 
-    <div class="form-group">
-      <label for=" production_date"> production_date</label>
-      <input type="date" class="form-control" name=" production_date"  formControlName="production_date" [(ngModel)]="drug.production_date">
-    </div>
+  
     
-    <div class="form-group">
-      <label for=" expiry_date"> expiry_date</label>
-      <input type="date" class="form-control"formControlName="expiry_date" name="expiry_date"  [(ngModel)]="drug.expiry_date">
-    </div>
-    <div class="form-group">
-      <label for=" category"> category</label>
-      <select name="category_id" formControlName="category_id" [(ngModel)]="drug.category_id">
-        <option>select category</option>
-        <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
-      </select>
-    </div>
      <button  type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button> <br>
      <!-- <button  type="submit" routerLink="/drugs" class="btn btn-dark btn-sm mt-4"><i class="fa-solid fa-arrow-left"></i></button> 
    -->
