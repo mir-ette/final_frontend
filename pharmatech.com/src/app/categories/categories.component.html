@@ -1,3 +1,15 @@
+<style>
+   #add{
+    margin-top: -70px;
+    margin-left: 40px;
+  }
+  #a{
+    display: inline-block;
+   margin-right: 10px;
+  }
+ 
+  
+</style>
 <app-navbar></app-navbar>
 
  <div class="row "> 
@@ -10,7 +22,7 @@
   <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:90%;"> 
     <h1 style="padding:30px">CATEGORIES</h1>
     <div style="padding-left:90%;">
-    <button type="button" class=" btn btn-warning" routerLink="/categories/add" >add category</button></div>
+    <button type="button" class=" btn btn-warning" routerLink="/categories/add" id="add" >add category</button></div>
     <!-- <table class="table table-hover my-0" >
         <thead>
             <tr>
@@ -48,9 +60,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let category of categories | paginate: { itemsPerPage: 5, currentPage: p }">
+        <tr  *ngFor="let category of categories | paginate: { itemsPerPage: 5, currentPage: p }">
           <th scope="row">{{category.name}}</th>
-          <td><button class="btn-danger" (click)="deleteCategoryData(category .id)"><i class="fa-solid fa-xmark"></i></button> <button class="btn-warning" routerLink="/categories/edit/{{category .id}}"><i class="fa-solid fa-pen"></i></button></td>
+          <td><button id="a" class="btn-danger" (click)="deleteCategoryData(category .id)"><i class="fa-solid fa-xmark"></i></button> 
+             <button id="a" class="btn-warning" routerLink="/categories/edit/{{category .id}}"><i class="fa-solid fa-pen"></i></button></td>
           
         </tr>
       

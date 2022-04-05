@@ -1,7 +1,12 @@
 
 .my-pagination /deep/ .ngx-pagination .current {
     background: red;
+    
   }
   img{
     width: 50px;
   }
+  .my-pagination{
+    text-align: right;
+  }
+  
