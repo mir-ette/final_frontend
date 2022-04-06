@@ -1,7 +1,7 @@
    <!-- header start -->
 <app-home-navbar></app-home-navbar>
-<div class="search-hero" style="width: 250px; padding-left: 50px;"><i class="fa-solid fa-microscope"></i>
-  <input class="form-control mr-sm-2" type="text" name="search"  [(ngModel)]="searchText" placeholder="search by " >
+<div class="search-hero" style="width: 250px; padding-left: 700px;"><i class="fa-solid fa-microscope"></i>
+  <input  id="s" class="form-control mr-sm-2" type="text" name="search" [(ngModel)]="searchText" placeholder="Search by Product Name">
    
 </div>
 
@@ -11,7 +11,8 @@
         <app-drug-item class="col-4"  *ngFor="let drug of drugs  |filter :searchText| paginate: { itemsPerPage: 3, currentPage: p }" [drugItem] ="drug"></app-drug-item>
    
    
-    <div class="row">
+    <div class="row" id="z">
+       
         <div class="col-6">
     <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls></div>
     <div class="col-6" id="cart">
