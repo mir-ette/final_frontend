@@ -21,18 +21,12 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover"><a routerLink="/home" data-toggle="tooltip"
-                                            data-placement="home" title="tmm!">home</a></li>
+                                    <li class="top-hover"><a routerLink="/home"  >home</a></li>
                                     <li><a routerLink="/about">about</a></li>
-                                    <!-- <li class="top-hover"><a >Drug</a> -->
-                                    <!-- <ul class="submenu"> -->
+                                   
                                     <li><a routerLink="/home/drug">Drugs</a></li>
 
-                                    <!-- <li><a routerLink="/home/skin" >Skin & hair Care</a></li> -->
-
-                                    <!-- </ul>
-                                    </li> -->
-                                    <!-- <li><a  routerLink="/home/cart">cart page</a></li>  -->
+                             
 
                                     <span *ngIf="!token">
                                         <li><a routerLink="/login">Login</a></li>
@@ -41,7 +35,7 @@
                                     <span *ngIf="token">
                                         <li (click)="logout()"><a id="logout">Logout</a></li>
                                     </span>
-                                    <!-- <li><a routerLink="/register">Register</a></li> -->
+                                  
 
                                     <li><a routerLink="/home/contact">contact</a></li>
                                     <li><button routerLink="/home/cart" class="btn btn-primary">
@@ -54,7 +48,7 @@
                                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                         <i class="fa fa-bars"></i>
                                     </a>
-                                    <!-- <li><a href="">logout</a></li> -->
+                                  
                                 </ul>
                             </nav>
 
