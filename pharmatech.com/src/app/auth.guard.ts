@@ -7,7 +7,7 @@ export class AuthGuard implements CanActivate{
     constructor(private router:Router){
 
     }
-    token:any; //any lazm tt7t
+    token:any; 
     canActivate():any{
         this.token=localStorage.getItem('token');
         if(this.token){

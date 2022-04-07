@@ -22,9 +22,9 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
-      city: [null, Validators.required], //ask '' or null
+      city: [null, Validators.required], 
       street: [null, Validators.required],
-      // role:[null,Validators.required],
+      
     })
   }
 
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
     }
     this.dataService.registerUser(this.form.value).subscribe(res => {
       this.data = res;
-      // console.log(res);
+      
       if (this.data.status === 1) {
         this.toastr.success(JSON.stringify(this.data.message), JSON.stringify(this.data.code), {
           timeOut: 2000,
@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
       this.form.get('password')?.reset();
       this.form.get('city')?.reset();
       this.form.get('street')?.reset();
-      // this.form.get('role')?.reset();
+     
     });
     this.router.navigate(['/home'])
   }

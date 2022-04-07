@@ -40,13 +40,7 @@ status = OrderStatus;
 
    }
 
-  //  insertOrderData(){
-  // this.dataService.insertOrderData(this.order).subscribe(res=>{
-  //   // this.getDrugsData
-  //   console.log(res);
-    
-  // })
-  //  }
+
 
 
    updateOrderData(id:number, data:orderInterface){

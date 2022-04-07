@@ -37,7 +37,7 @@ export class CategoriesComponent implements OnInit {
 
    insertCategoryData(){
   this.dataService.insertCategoryData(this. category).subscribe(res=>{
-    // this.getDrugsData
+  
     console.log(res);
     
   })

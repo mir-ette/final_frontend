@@ -64,7 +64,7 @@ export class ProfileAdminComponent implements OnInit {
       this.user.street = this.data.street;
 
     });
-    // this.router.navigate(['/dashboard'])
+   
   }
 
 

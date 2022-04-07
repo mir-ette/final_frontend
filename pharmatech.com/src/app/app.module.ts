@@ -41,19 +41,14 @@ import { NewDashboardComponent } from './new-dashboard/new-dashboard.component';
 import { ChildenGuardGuard } from './_guard/admin/childen-guard.guard';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { DetailsComponent } from './components/details/details.component';
-// import { CommonModule } from '@angular/common';
+
 import { NgxParallaxScrollModule } from 'ngx-parallax-scroll';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DrugItemComponent } from './components/drug-item/drug-item.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 const appRoutes: Routes = [
- // {
-  //  path: '',
-   // canActivate: [AuthGuardGuard],
-   //canActivateChild: [ChildenGuardGuard],
-    //children: [
-    //{ path: '', component: HomeComponent },
+
       { path: '', component: NewDashboardComponent, canActivate: [AuthGuardGuard] },
       { path: 'home', component: HomePageComponent },
 
@@ -96,8 +91,7 @@ const appRoutes: Routes = [
 
  { path: 'home/details/:id', component:  DetailsComponent },
       
-   // ]
- // },
+ 
 
   { path: 'register', component: RegisterComponent, },
   { path: 'login', component: LoginComponent, canActivateChild: [ChildenGuardGuard]},//ask
@@ -108,28 +102,7 @@ const appRoutes: Routes = [
 ]
 
 ///////////////////////////////////////////////
-//,pathMatch:'full'
-//canActivateChild:[AuthGuardGuard],
-//   {
-//     path: '', component: HomeComponent, 
-//     canActivate: [AuthGuardGuard], 
-//     canActivateChild: [ChildrenGuard],
-//     children: [
-//       { path: 'drugs', component: DrugsComponent, },
-//       { path: 'drugs/add', component: DrugAddComponent },
-//       { path: 'drugs/edit/:id', component: DrugEditComponent },
-//       { path: 'edit/:id', component: UserEditComponent },
-//       { path: 'orders', component: OrdersComponent },
-//       { path: 'orders/add', component: OrderAddComponent },
-//       { path: 'orders/edit/:id', component: OrderEditComponent },
-//       { path: 'categories', component: CategoriesComponent },
-//       { path: 'categories/edit/:id', component: CategoryEditComponent },
-//       { path: 'categories/add', component: CategoryAddComponent }
-//     ]
-//   },
 
-//   { path: 'register', component: RegisterComponent, },
-//   { path: 'login', component: LoginComponent },
 
 
 
@@ -186,7 +159,7 @@ const appRoutes: Routes = [
     NgxPaginationModule,
     CarouselModule,
     NgxParallaxScrollModule,
-    // CommonModule
+   
     Ng2SearchPipeModule
   ],
   providers: [],

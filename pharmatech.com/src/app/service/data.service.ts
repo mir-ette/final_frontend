@@ -43,12 +43,7 @@ productsByCategory(category_id:any){
   return this.http.get(environment.apiUrl+'/api/productsByCategory/'+category_id);
 
 }
-//  productsByCategory(category_id:any){
 
-  
-//    return this.http.get(environment.apiUrl+'/api/productsByCategory/'+category_id);
-
-//  }
 getFilteredData(data:any){
   return this.http.post(environment.apiUrl+'/api/fetch_multiple_drugs/',data);
 }
@@ -84,13 +79,7 @@ deleteOrderData(id:any){
 getOrderById(id:any){
   return this.http.get(environment.apiUrl+'/api/orders/'+id);
 }
-// insertOrderData(data:any){
-//   return this.http.post(environment.apiUrl+'/api/addOrder/',data);
-// }
 
-// updateOrderData(id:any,data:any){
-//   return this.http.put(environment.apiUrl+'/api/updateOrder/'+id,data);
-// }
 
 /////////////////////newone/////////////////////////
 insertOrderData(drugs:orderInterface,city:any,id:number) {
@@ -99,7 +88,7 @@ insertOrderData(drugs:orderInterface,city:any,id:number) {
     Authorization: localStorage.getItem('token')!
   })
  
-// console.log(userData);
+
 
   return this.httpClient.post('http://127.0.0.1:8000/api/storeOrder',{drugs,city,id}, { headers: header });
 
@@ -144,17 +133,3 @@ updateCategoryData(id:any,data:any){
 
 
 
-  // constructor(private httpClient:HttpClient) { }
-// hn70t el api elli mn el laravel makan...
-  // getData(){
-  //   return this.httpClient.get('http://.....'); 
-  // }
-// hnshil el :any awel mal el api yet7at
-//   deleteData(id:any){
-//     return this.httpClient.delete('http://....../'+id);
-//   }
-//   getUserById(id:any){
-//     return this.httpClient.get('http://....../'+id);
-//   }
- 
-// hnshil el id:any mn getUserById

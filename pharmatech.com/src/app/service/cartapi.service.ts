@@ -9,8 +9,7 @@ import { Drug } from '../drug';
   providedIn: 'root'
 })
 export class CartapiService {
-// cartDataList:any=[];
-// drugs= new  BehaviorSubject<any>([])
+
 
 @Input()
   cartHasBeenChanged: EventEmitter<Drug[]> = new EventEmitter<Drug[]>();
@@ -26,9 +25,7 @@ export class CartapiService {
 
   constructor( private httpClient:HttpClient) { }
 
-  // getCartData(id:any){
-  //   return this.httpClient.get(environment.apiUrl+'/api/show/'+id);
-  // }
+ 
 
 
   getCart(id: number) {
