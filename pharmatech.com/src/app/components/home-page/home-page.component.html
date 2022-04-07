@@ -1,114 +1,130 @@
- <!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="zxx">
-    
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sabujcha - Matcha eCommerce Bootstrap4 Template</title>
-        <meta name="description" content="">
-        <meta name="robots" content="noindex, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/.assets/img/favicon.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Sabujcha - Matcha eCommerce Bootstrap4 Template</title>
+    <meta name="description" content="" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/.assets/img/favicon.png"
+    />
 
-        <!-- <div class="carousel-caption">
+    <!-- <div class="carousel-caption">
             <h3>Los Angeles</h3>
             <p>We had such a great time in LA!</p>
           </div> -->
-		<!-- all css here -->
-     
-     </head>
-     <style>
-   .carousel .carousel-item {
-  height:550px;
-}
-#swsn{
-    height: 600px;
-    width: 1800px;
-}
-#yosef{
-    height: 700px;
-    width: 1900px;
-}
+    <!-- all css here -->
+  </head>
+  <style>
+    .carousel .carousel-item {
+      height: 550px;
+    }
+    #swsn {
+      height: 600px;
+      width: 1800px;
+    }
+    #yosef {
+      height: 700px;
+      width: 1900px;
+    }
 
+    .carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      /* min-height: 500px; */
+    }
+  </style>
+  <body>
+    <app-home-navbar></app-home-navbar>
+    <div
+      class="parallax"
+      style="background-image: url(assets/pexels-ready-made-3850703.jpg)"
+    ></div>
+    <!-- Slider Start -->
+    <div
+      id="demo"
+      class="carousel slide"
+      data-ride="carousel"
+      data-interval="3000"
+    >
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
 
-.carousel-item img {
-    position: absolute;
-    object-fit:cover;
-    top: 0;
-    left: 0;
-    /* min-height: 500px; */
-}
-   </style> 
-    <body> 
-<app-home-navbar></app-home-navbar>
-<div class="parallax" style="background-image: url(assets/pexels-ready-made-3850703.jpg);"></div>
-<!-- Slider Start -->
-<div id="demo" class="carousel slide" data-ride="carousel"  data-interval="3000">
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/.assets/img/slider/slider-1.jpg" alt="New York" />
+        </div>
+        <div class="carousel-item">
+          <img
+            id="swsn"
+            src="assets/pexels-polina-tankilevitch-3873149.jpg"
+            alt="Chicago"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            id="yosef"
+            src="assets/pexels-szymon-shields-6042853.jpg"
+            alt="New York"
+          />
+        </div>
+      </div>
 
-    <!-- Indicators -->
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      <li data-target="#demo" data-slide-to="1"></li>
-      <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-  
-    <!-- The slideshow -->
-    <div class="carousel-inner">
-      <div class="carousel-item active" >
- <img src="assets/.assets/img/slider/slider-1.jpg" alt="New York">
-      </div>
-      <div class="carousel-item">
-         <img  id ='swsn'src="assets/pexels-polina-tankilevitch-3873149.jpg" alt="Chicago"> 
-        
-        
-      </div>
-      <div class="carousel-item">
-        <img  id='yosef'src="assets/pexels-szymon-shields-6042853.jpg" alt="New York">
-      </div>
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
     </div>
-  
-    <!-- Left and right controls -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </a>
-  
-  </div>
-  
-<!-- Slider End -->
-	<!-- Product Area Start -->
-  <div class="container text-center">
 
-    <div>SKIN CARE </div>
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide>
-        <img src="assets/6a7f0031-2e83-409e-b567-dfebbd96060b_533x.webp" alt="">
-      </ng-template>  
-      <ng-template carouselSlide> <img src="assets/alover-copy-300x300.png" alt=""></ng-template>  
-      <ng-template carouselSlide> <img src="assets/biovita-copy-300x300.png" alt=""></ng-template>  
-      <ng-template carouselSlide>
-        <img src="assets/treato-conditioner-copy.png" alt="">
-      </ng-template>  
-      <ng-template carouselSlide> <img src="assets/treato-ampoules-copy-300x300.png" alt=""></ng-template>  
-      <ng-template carouselSlide> <img src="assets/top-hair-conditioner-copy-300x300.png" alt=""></ng-template>  
-    </owl-carousel-o>
-    <div></div>
-
-
-
-  </div>
+    <!-- Slider End -->
+    <!-- Product Area Start -->
+    <div class="container text-center">
+      <br />
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          <img
+            src="assets/6a7f0031-2e83-409e-b567-dfebbd96060b_533x.webp"
+            alt=""
+          />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="assets/alover-copy-300x300.png" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img src="assets/biovita-copy-300x300.png" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img src="assets/treato-conditioner-copy.png" alt="" />
+        </ng-template>
+        <ng-template carouselSlide>
+          <img src="assets/treato-ampoules-copy-300x300.png" alt=""
+        /></ng-template>
+        <ng-template carouselSlide>
+          <img src="assets/top-hair-conditioner-copy-300x300.png" alt=""
+        /></ng-template>
+      </owl-carousel-o>
+      <div></div>
+    </div>
 
     <!-- Banner End -->
 
-
-
-
-
-<!-- carousal bta3na start -->
-<!-- 
+    <!-- carousal bta3na start -->
+    <!-- 
 <div id="demo" class="carousel slide" data-ride="carousel"  data-interval="3000"> -->
 
     <!-- Indicators -->
@@ -119,7 +135,7 @@
     </ul>
    -->
     <!-- The slideshow -->
-     <!-- <div class="carousel-inner">
+    <!-- <div class="carousel-inner">
       <div class="carousel-item active" >
  <img src="assets/.assets/img/slider/slider-1.jpg" alt="New York">
  <div class="carousel-caption">
@@ -143,9 +159,9 @@
           </div> 
       </div>
     </div>  -->
-  
+
     <!-- Left and right controls -->
-     <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </a>
     <a class="carousel-control-next" href="#demo" data-slide="next">
@@ -154,9 +170,7 @@
   
   </div> -->
 
-
-
-<!-- 
+    <!-- 
   <div class="card-deck" style="margin-left: 50px;">
     
       <div class="flip-card">
@@ -218,48 +232,24 @@
     </div>
   </div> -->
 
- 
-
-
-
-
-
-
-
-
-
-
-  <table class="table table-hover my-0" *ngFor="let drug of drugs" >
-    <thead>
+    <table class="table table-hover my-0" *ngFor="let drug of drugs">
+      <thead>
         <tr>
-          <th class="d-none d-xl-table-cell">{{drug[0].image}}</th>
-           
-            
-      
+          <th class="d-none d-xl-table-cell">{{ drug[0].image }}</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <!-- <tr *ngFor="let drugg of drug ">
           <td class="d-none d-xl-table-cell">{{drugg.category_id}}</td>
              -->
-           
+
         <!-- </tr> -->
         <!-- hnkml kol elli ta7t zy elli fo2 w 3wzin ns2l ezay el btn n5liha dynamic -->
-        
-       
-        
-      
-        
-   
-    </tbody>
-</table>
+      </tbody>
+    </table>
 
-   
-<!-- Testimonial Area End -->
+    <!-- Testimonial Area End -->
 
-
-
-
-
-<app-home-footer></app-home-footer>
-  
+    <app-home-footer></app-home-footer>
+  </body>
+</html>

@@ -10,16 +10,26 @@
     color: blue !important;
     font-size: 30px;
 }
-#cart:hover{
+/* #cart:hover{
 
 text-decoration: underline;
 font-size: 20px;
 
-}
+} */
 #s{
-    width: 250px;
-    font-size: large; 
+
+    width: 400px;
+    font-size: large;
+    margin-left: 550px; 
 }
 #z{
-    padding-left: 1220px;
+    text-align: right;
 }
+
+#arrow{
+    margin: 10px;
+  }
+  #cart{
+    font-size: 30px;
+    font-family: cursive;
+  }

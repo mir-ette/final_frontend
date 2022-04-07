@@ -1,409 +1,89 @@
 <style>
-  #add{
+  #add {
     margin-top: -70px;
     margin-left: -20px;
   }
-  #t{
+  #t {
     padding-right: 80px;
   }
- 
+  #a {
+    display: inline-block;
+    margin-right: 8px;
+  }
 </style>
 <app-navbar></app-navbar>
 
- <div class="row "> 
-    <div class="col-auto col-md-3 col-xl-2   ">
-        
-       
-  <app-sidebar></app-sidebar>
-</div>
+<div class="row">
+  <div class="col-auto col-md-3 col-xl-2">
+    <app-sidebar></app-sidebar>
+  </div>
 
-  <div class="col-sm-10 col-xl-4 col-md-3 col-lg-3  " style="width:80%;"> 
-    <h1 style="padding:40px">DRUGS</h1>
-    <div style="padding-left:800px;">
-      <button type="button" class=" btn btn-warning" id="add" routerLink="/drugs/add"  >add drug</button></div>
-    <table class="table table-hover my-0" id="t">
-        <thead>
-            <tr>
-              <th class="d-none d-md-table-cell">image</th>
-
-              <th class="d-none d-xl-table-cell">trade_name_en</th>
-                <th class="d-none d-xl-table-cell">trade_name_ar </th>
-               
-                <th class="d-none d-xl-table-cell">price</th>
-                <th class="d-none d-md-table-cell">'description</th>
-                <th class="d-none d-xl-table-cell">production_date</th>
-                <th class="d-none d-xl-table-cell">expiry_date</th>
-                <th class="d-none d-xl-table-cell">action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let drug of drugs | paginate: { itemsPerPage: 5, currentPage: p }">
-              <td class="d-none d-md-table-cell"><img src="{{imageDirectoryPath}}{{drug.image}}" alt=""></td>
-
-              <!-- <td class="d-none d-md-table-cell">{{drug.image}}</td> -->
-              <td class="d-none d-xl-table-cell">{{drug.trade_name_en}}</td>
-                <td>{{drug.trade_name_ar}}</td>
-               
-                <td class="d-none d-xl-table-cell">{{drug.price}}</td>
-                
-                <td class="d-none d-xl-table-cell">{{drug.description}}</td>
-               
-                <td class="d-none d-md-table-cell">{{drug.production_date}}</td>
-
-                <td class="d-none d-md-table-cell">{{drug.expiry_date}}</td>
-
-                 <td class="d-none d-md-table-cell"><button  class="btn-danger"  (click)="deleteData(drug.id)">
-                   <i class="fa-solid fa-xmark"></i></button> <br><br>
-                   <button   class="btn-warning" routerLink="/drugs/edit/{{drug.id}}"><i  class="fa-solid fa-pen"></i></button></td> 
-            </tr>
-            
-            
-           
-            
-          
-            
-       
-        </tbody>
-    </table>
-    <div id="c">
-      <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+  <div class="col-sm-10 col-xl-9 col-md-8 col-lg-8">
+    <h1 style="padding: 40px">DRUGS</h1>
+    <div style="text-align: right;">
+      <button
+        type="button"
+        class="btn btn-warning"
+        id="add"
+        routerLink="/drugs/add"
+      >
+        add drug
+      </button>
     </div>
-<!-- 
-    <form action=" " method="post"  (ngSubmit)="submit()" [formGroup]="form" class="mx-1 mx-md-4">
-  
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-user fa-lg me-3 fa-fw"style="color:aqua;"></i>
-          <div class="form-outline flex-fill mb-0">
-            <input type="text" class="form-control" formControlName=" trade_name_ar" name="trade_name_ar" [ngClass]="{'is-invalid': submitted &&f['trade_name_ar'].errors}"  required/>
-            <label class="form-label" for="form3Example1c">trade_name_ar</label>
-            <div *ngIf="submitted && f['trade_name_ar'].errors" class="invalid-feedback">
-              <div  *ngIf="f['trade_name_ar'].errors['required']">
-               name is required
-              </div>
+    <table class="table table-hover my-0" id="t">
+      <thead>
+        <tr>
+          <th class="d-none d-md-table-cell">image</th>
 
-          </div>
-        </div>
-          
-          
-        </div>
-        
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-envelope fa-lg me-3 fa-fw"style="color:aqua;"></i>
-          <div class="form-outline flex-fill mb-0">
-            <input type="text" name=" trade_name_en" formControlName=" trade_name_en" class="form-control"  [ngClass]="{'is-invalid': submitted && f[' trade_name_en'].errors}" required />
-            <label class="form-label" for="form3Example3c">trade_name_en</label>
+          <th class="d-none d-xl-table-cell">Name (English)</th>
+          <th class="d-none d-xl-table-cell">Name (Arabic)</th>
 
+          <th class="d-none d-xl-table-cell">price</th>
+          <!-- <th class="d-none d-md-table-cell">'description</th> -->
+          <th class="d-none d-xl-table-cell">production_date</th>
+          <th class="d-none d-xl-table-cell">expiry_date</th>
+          <th class="d-none d-xl-table-cell">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let drug of drugs | paginate: { itemsPerPage: 4, currentPage: p }
+          "
+        >
+          <td class="d-none d-md-table-cell">
+            <img src="{{ imageDirectoryPath }}{{ drug.image }}" alt="" />
+          </td>
 
-            
-         <div *ngIf="submitted && f['trade_name_en'].errors" class="invalid-feedback">
-          <div  *ngIf="f['trade_name_en'].errors['required']">
-           email is required
-          </div>
-            
-    
-          <!-- <div  *ngIf="f['email'].errors['email']">
-           email must be valid
-          </div>
-     -->
-          <!-- </div>
-        </div>
-        </div>
-        <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3 fa-fw" style="color:aqua;"></i>
-            <div class="form-outline flex-fill mb-0">
-              <input type="number" name="price" formControlName="price"  class="form-control" [ngClass]="{'is-invalid': submitted &&f['price'].errors}"  required />
-              <label class="form-label" for="form3Example4c">price</label>
+          <!-- <td class="d-none d-md-table-cell">{{drug.image}}</td> -->
+          <td class="d-none d-xl-table-cell">{{ drug.trade_name_en }}</td>
+          <td>{{ drug.trade_name_ar }}</td>
 
+          <td class="d-none d-xl-table-cell">{{ drug.price }}</td>
 
-              <div *ngIf="submitted && f['price'].errors" class="invalid-feedback">
-                <div  *ngIf="f['price'].errors['required']">
-                 price is required
-                </div>
-                  
-          
-                
-          
-                </div>
-              
-            </div>
-          </div>
+          <!-- <td class="d-none d-xl-table-cell">{{ drug.description }}</td> -->
 
-       
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fa-solid fa-city fa-lg me-3 fa-fw"style="color:aqua;"></i>
-            <div class="form-outline flex-fill mb-0">
-              <input type="text" class="form-control"   formControlName="description" name="description" [ngClass]="{'is-invalid': submitted && f['description'].errors}" required/>
-              <label class="form-label" for="form3Example1c">description</label>
+          <td class="d-none d-md-table-cell">{{ drug.production_date }}</td>
 
-             
-              <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
-                <div  *ngIf="f['description'].errors['required']">
-                 description is required
-                </div>
+          <td class="d-none d-md-table-cell">{{ drug.expiry_date }}</td>
 
-            </div>
-            </div>
-          </div>
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fa-solid fa-road fa-lg me-3 fa-fw"style="color:aqua;"></i>
-            <div class="form-outline flex-fill mb-0">
-              <input type="text" class="form-control" formControlName="image"  name="image" [ngClass]="{'is-invalid': submitted && f['image'].errors}" required/>
-              <label class="form-label" for="form3Example1c">image</label>
-
-              <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
-                <div  *ngIf="f['image'].errors['required']">
-                 image is required
-                </div>
-
-            </div>
-            </div>
-
-            </div>
-          
-
-
-
-
-
-            <div class="d-flex flex-row align-items-center mb-4">
-                <i class="fa-solid fa-road fa-lg me-3 fa-fw"style="color:aqua;"></i>
-                <div class="form-outline flex-fill mb-0">
-                  <input type="date" class="form-control" formControlName=" production_date"  name=" production_date" [ngClass]="{'is-invalid': submitted && f[' production_date'].errors}" required/>
-                  <label class="form-label" for="form3Example1c"> production_date</label>
-    
-                  <div *ngIf="submitted && f['production_date'].errors" class="invalid-feedback">
-                    <div  *ngIf="f['production_date'].errors['required']">
-                      production_date is required
-                    </div>
-    
-                </div>
-                </div>
-    
-                </div>
-
-
-
-
-
-
-             <div class="d-flex flex-row align-items-center mb-4">
-              <i class="fa-solid fa-city fa-lg me-3 fa-fw"></i>
-              <div class="form-outline flex-fill mb-0">
-                <input type="date" class="form-control"   formControlName="expiry_date" name="expiry_date" [ngClass]="{'is-invalid': submitted && f['expiry_date'].errors}" required/>
-                <label class="form-label" for="form3Example1c">expiry_date</label>
-
-               
-                <div *ngIf="submitted && f['expiry_date'].errors" class="invalid-feedback">
-                  <div  *ngIf="f['expiry_date'].errors['required']">
-                   expiry_date is required
-                  </div>
-
-              </div>
-              </div>
-            </div>
-           
-       
-
-       
-      
-
-            <!-- <div class="mb-3 form-check">
-              <a [routerLink]="['/login']">already have an account</a>
-            </div> -->
-            <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                <button type="submit" class="btn btn-warning btn-lg">ADD</button>
-            </div>
-        </form> --> 
-
-
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-ADD DRUG
-</button> -->
-
-<!-- Modal -->
-<!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">ADDdrugs</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form (ngSubmit)="insertData()">
-          <div class="form-group">
-            <label for=" image"> image</label>
-            <input type="text" class="form-control" name=" image" [(ngModel)]="drug.image">
-          </div>
-          <div class="form-group">
-            <label for=" trade_name_en"> trade_name_en</label>
-            <input type="text" class="form-control" name=" trade_name_en" [(ngModel)]="drug.trade_name_en">
-          </div>
-          <div class="form-group">
-            <label for=" trade_name_ar"> trade_name_ar</label>
-            <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
-          </div>
-          
-       
-          <div class="form-group">
-            <label for="price"> price</label>
-            <input type="number" class="form-control" name=" price" [(ngModel)]="drug.price">
-          </div> 
-          <div class="form-group">
-            <label for="  description"> description</label>
-            <input type="text" class="form-control" name="  description" [(ngModel)]="drug. description">
-          </div>
-       
-          <div class="form-group">
-            <label for=" production_date"> production_date</label>
-            <input type="date" class="form-control" name=" production_date" [(ngModel)]="drug.production_date">
-          </div>
-          
-          <div class="form-group">
-            <label for=" expiry_date"> expiry_date</label>
-            <input type="date" class="form-control" name=" expiry_date" [(ngModel)]="drug.expiry_date">
-          </div>
-          <button  type="submit"  (click)="gotoDrugs()"  class="btn btn-dark btn-sm mt-4">ADD</button>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
-      </div>
+          <td class="d-none d-md-table-cell">
+            <button id="a" class="btn-danger" (click)="deleteData(drug.id)">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            <button id="a" class="btn-warning" routerLink="/drugs/edit/{{ drug.id }}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <div id="c">
+      <pagination-controls
+        class="my-pagination"
+        (pageChange)="p = $event"
+      ></pagination-controls>
     </div>
   </div>
-</div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <form (ngSubmit)="insertData()">
-<div class="form-group">
-  <label for=" trade_name_ar"> trade_name_ar</label>
-  <input type="text" class="form-control" name=" trade_name_ar" [(ngModel)]="drug.trade_name_ar">
 </div>
-
-<div class="form-group">
-  <label for=" trade_name_en"> trade_name_en</label>
-  <input type="text" class="form-control" name=" trade_name_en" [(ngModel)]="drug.trade_name_en">
-</div>
-<div class="form-group">
-  <label for="price"> price</label>
-  <input type="number" class="form-control" name=" price" [(ngModel)]="drug.price">
-</div> 
-<div class="form-group">
-  <label for="  description"> description</label>
-  <input type="text" class="form-control" name="  description" [(ngModel)]="drug. description">
-</div>
-<div class="form-group">
-  <label for=" image"> image</label>
-  <input type="text" class="form-control" name=" image" [(ngModel)]="drug.image">
-</div>
-<div class="form-group">
-  <label for=" production_date"> production_date</label>
-  <input type="date" class="form-control" name=" production_date" [(ngModel)]="drug.production_date">
-</div>
-
-<div class="form-group">
-  <label for=" expiry_date"> expiry_date</label>
-  <input type="date" class="form-control" name=" expiry_date" [(ngModel)]="drug.expiry_date">
-</div>
-<button  type="submit" class="btn btn-dark btn-sm mt-4">ADD</button>
-</form> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<footer class="footer">
-    <div class="container-fluid">
-        <div class="row text-muted">
-            <div class="col-6 text-start">
-                <p class="mb-0">
-                    <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>pharmatech</strong></a> &copy;
-                </p>
-            </div>
-            <div class="col-6 text-end">
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-  </footer>

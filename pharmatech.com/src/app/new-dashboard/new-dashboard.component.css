@@ -37,10 +37,10 @@ h1{
   }
   
   /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
+  /* .flip-card-front {
     background-color: #bbb;
     color: black;
-  }
+  } */
   
   /* Style the back side */
   .flip-card-back {
@@ -52,3 +52,5 @@ h1{
       background-color:  #9ec2e6 ;
       color: white;
   }
+
+ 

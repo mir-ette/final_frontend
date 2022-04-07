@@ -7,6 +7,6 @@
     width: 50px;
   }
   #c{
-    padding-left: 800px;
-
+    /* padding-left: 800px; */
+text-align: right;
   }
