@@ -16,16 +16,13 @@ export class DetailsComponent implements OnInit {
   imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   id: any;
    drugs:any;
-   //drug= new Drug();
+ 
    drug: any=[];
 @Input()drugItem!:Drug;
-  //  drug!:Drug;
+
   drugList: Drug[] = [];
   constructor(private dataService: DataService, private route: ActivatedRoute, private router: Router,private cartService:CartService, private apiCart:CartapiService) {
-    // route.params.subscribe((params)=>{
-    //   if(params['id'])
-    //   this.drug=dataService.getDrugById(params['id'])
-    // })
+ 
    }
 
   ngOnInit(): void {
@@ -57,14 +54,3 @@ export class DetailsComponent implements OnInit {
 
   }
 }
-// ngOnInit(): void {
-//   this.id=this.route.snapshot.params['id'];
-//   this.getsData();
-
-// }
-// getsData(){
-// this.dataService.getDrugById(this.id).subscribe(res=>{
-//   this.data=res;
-//   this.drug=this.data
-// })
-// }}

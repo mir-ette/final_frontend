@@ -21,7 +21,7 @@ p: number = 1;
     this.users=res;
    })
 
- }// hnshil el :any awel mal el api yet7at
+ }
 
  deleteUserData(id:any){
   this.dataService.deleteUserData(id).subscribe(res=>{

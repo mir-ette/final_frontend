@@ -18,7 +18,7 @@ export class HomeDrugComponent implements OnInit {
   imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   data: any;
   p: number = 1;
-  drugs: any=[]; //tb3 el filter wesh8ala
+  drugs: any=[]; 
   drug = new Drug();
   searchText = '';
   selected_categories:any=[];
@@ -67,7 +67,7 @@ console.log(this.drugItem);
 
   }
 
-// part el filter
+
   getFilterData(){
     console.log('clicked');
     
@@ -86,7 +86,7 @@ this.filter_data=res
 
   }
 
-//part elfilter brdo
+
 
 
 filterDrugs(event: any){

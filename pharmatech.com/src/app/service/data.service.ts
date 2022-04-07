@@ -81,7 +81,7 @@ getOrderById(id:any){
 }
 
 
-/////////////////////newone/////////////////////////
+////////////////////////////////////////////
 insertOrderData(drugs:orderInterface,city:any,id:number) {
 
   let header = new HttpHeaders({

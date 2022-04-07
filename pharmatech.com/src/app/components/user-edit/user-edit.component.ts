@@ -13,17 +13,17 @@ export class UserEditComponent implements OnInit {
 data:any;
 users:any;
 user =new User();
-  // data: Object | undefined;
+ 
   constructor(private route:ActivatedRoute,private dataService:DataService,private router:Router) { }
 
   ngOnInit(): void {
-    // console.log(this.route.snapshot.params.id);
+    
      this.id=this.route.snapshot.params['id'];
      this.getUsersData();
   }
  getUsersData(){
   this.dataService.getUserById(this.id).subscribe(res=>{
-//     // console.log(res); 
+ 
    this.data=res;
     this.user=this.data;
     
@@ -42,8 +42,7 @@ user =new User();
 
 
 
-// gotoUsers(){
-//   this.router.navigate(['/']);
+
 }
 
 

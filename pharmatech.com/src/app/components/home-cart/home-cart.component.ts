@@ -29,12 +29,7 @@ imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
   constructor( private apiCart:CartapiService,private dataService:DataService) { }
 
   ngOnInit(): void {
-    // this.apiCart.getDrugData().subscribe(res=>{
-    //   this.drugs=res;
-    //   this.grandTotal=this.apiCart.getTotalAmount();
-    //   console.log(res);
-      
-    // })
+  
 
     this.userData = localStorage.getItem('token');
     this.userData = jwt_decode(this.token);
@@ -124,36 +119,4 @@ imageDirectoryPath: any = 'http://127.0.0.1:8000/storage/drugs/';
 
 
 
-
-
-  // setCart(){
-  //   this.cart=this.cartService.getCart()
-  // }
-
-
-  // removeFromCart(cartItem:CartItem){
-  //   this.cartService.removeFromCart(cartItem.drug.id)
-  //   this.setCart()
-  // }
-
-  // changeQuantity(cartItem:CartItem, quantityInString:string){
-  //   const quantity =parseInt( quantityInString);
-  //   this.cartService.changeQuantity(cartItem.drug.id,quantity)
-  //   this.setCart();
-  // }
-
-
-
-
-
-
-
-
-
-// removeDrug(drug:any){ 
-//   this.apiCart.removeCartData(drug)
-// }
-// removeAllDrugs(){
-//   this.apiCart.removeAllCart();
-// }
 }

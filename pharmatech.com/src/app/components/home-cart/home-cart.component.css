@@ -114,14 +114,13 @@ margin: 10px;
   margin: 10px;
   font-size: 30px;
   font-family: cursive;
-/* position: absolute; */
+
 
 }
   #shopmore:hover{
 color:blue;
     text-decoration: underline;
-/* 
-   position: fixed; */
+
   }
   #circle {
     width: 90px;

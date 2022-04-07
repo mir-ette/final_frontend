@@ -16,13 +16,13 @@
    
 
     <div class="form-group">
-      <label for=" trade_name_en"> trade_name_en</label>
+      <label for=" trade_name_en"> Name (English)</label>
       <input type="text" class="form-control" name=" trade_name_en"formControlName="trade_name_en" [(ngModel)]="drug.trade_name_en">
     </div>
 
 
 
-      <label for=" trade_name_ar"> trade_name_ar</label>
+      <label for=" trade_name_ar"> Name (Arabic)</label>
       <input type="text" class="form-control" name=" trade_name_ar" formControlName="trade_name_ar"  [(ngModel)]="drug.trade_name_ar">
     </div>
     
@@ -31,9 +31,11 @@
       <label for="price"> price</label>
       <input type="number" class="form-control" name=" price" formControlName="price" [(ngModel)]="drug.price">
     </div> 
+
+  
     
      <button  type="submit" class="btn btn-dark btn-sm mt-4">UPDATE</button> <br>
-    
+ 
     </form>
   </div>
 

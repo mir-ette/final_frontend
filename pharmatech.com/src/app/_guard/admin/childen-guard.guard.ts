@@ -21,12 +21,12 @@ export class ChildenGuardGuard implements CanActivateChild {
         return true;
       }
       else {
-        this.router.navigate(['/home']) //navigate to home page
+        this.router.navigate(['/home'])
         
       }
     }
     else {
-      this.router.navigate(['/home']) //navigate to home page
+      this.router.navigate(['/home']) 
     }
   }
 

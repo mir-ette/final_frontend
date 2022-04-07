@@ -81,23 +81,4 @@ formData.append('production_date', this.form.get('production_date')?.value)
 
 
 
-
-
-
-  // gotoDrugs(){
-  //   this.router.navigate(['/drugs']);
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

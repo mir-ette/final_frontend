@@ -18,35 +18,15 @@ id:any;
   category= new Category();
   p: number = 1;
   
-   //drug:any;
+ 
   catid:any;
   category_id:any;
-  // params:any;
+
   constructor(private dataService:DataService, private activatedRoute:ActivatedRoute,private router:Router) { 
     
   }
 
-//   ngOnInit():void {
-  
-//  this.activatedRoute.paramMap.subscribe(params=>{
-//  this.catid=params.get('id');
-// console.log(this.catid);
 
-//     })
-    
-// this.getById(this.catid);
-//   }
-
-  
-//   getById(id:any){ 
-//      this.dataService.productsByCategory(id).subscribe(res=>{
-  
-//        this.drugs=res;
-//        console.log( this.drugs);
-      
-//     // this.drug=this.data
-//     })
-//    }
 
 ngOnInit(): void {
    this. catid=this.activatedRoute.snapshot.params[' id'];
@@ -62,17 +42,6 @@ getDrugsData(id:any){
    })
 
  }
-// getData(){
-//   this.dataService.productsByCategory(this.id).subscribe(res=>{
-//     this.data=res;
-//     this.drug=this.data
-//   })
-// }
-
-
-
-
-
 
 
   customOptions: OwlOptions = {

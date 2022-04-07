@@ -52,7 +52,7 @@ export class HomeNavbarComponent implements OnInit {
     );
 
 
-    //this.getCart();
+   
     this.userData = localStorage.getItem('token');
     this.userData = jwt_decode(this.token);
     this.id = this.userData.user_id;
